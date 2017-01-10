@@ -1,0 +1,766 @@
+/*Styles size of titles on the overlay*/
+#overlay-content .fieldset-legend{
+font-size:15px;
+}
+
+/*makes the fonts same weight on all browsers*/
+body {-webkit-font-smoothing: subpixel-antialiased;}
+
+/*Task bar is only visible when logged in*/
+#main-content-header{
+margin-top: 250px;
+} 
+
+/*moves error message from behind menu*/
+#messages{
+width: 100%;
+float: left;
+z-index: 1;
+}
+
+/*moves login from behind menu*/
+#user-login{
+padding-top:10px;
+}
+
+/*makes header&menu wrapper wider*/
+.menu-wrapper, .block-inner{
+margin-left:0;
+margin-right:0;
+}
+
+/*Edits MLK CHF Logo*/
+.mlk-logo{
+float:left;
+margin-right:230px;
+}
+
+.logo{
+padding: 30px 0px 20px 35px;
+}
+
+/*Hides MLK CHF mobile logo from appearing on desktop*/
+.logo-mobile{
+display:none;
+}
+
+/*Positions social media icons*/
+.social{
+float:left;
+margin-right:0px;
+}
+
+/*Styles MLK CHF header area*/
+#header{
+border-top:8px solid #84B15A;
+margin-bottom:10px;
+width: 100%;
+position:fixed;
+z-index:1;
+background-color:#fff;
+top:0px;
+padding-bottom: 20px;
+}
+
+/*Styles main image under menu bar*/
+.main-image{
+max-width:100%;
+border-right:3px solid #fff;
+margin-bottom:20px;
+}
+
+#main-content-header{
+margin-top:0;
+}
+/*Styles blue area under menu bar*/
+.pic-blue-block{
+border-bottom: 3px solid #fff;
+ background-color: #78ccdc;
+height: 397px;
+}
+
+.pic-blue-block img {
+border-right:solid 3px #fff;
+}
+
+#block-block-9{
+background-color:#81AA57
+}
+
+/*Styles green area under menu bar*/
+.green-block{
+width: 60%;
+padding:15px 0 12px 40px;
+color: #fff;
+font-size: 26px;
+font-family:"FrutigerNextW01-UltraLi",Verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+weight:400;
+}
+
+
+/*Styles heading text in area under menu bar*/
+.heading{
+font-size:50px;
+margin-bottom:12px;
+}
+
+/*Styles heading text in area under menu bar*/
+.stay-connected{
+font-family: "FrutigerNextW01-UltraLi",Verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size:18px;
+width: 71%;
+color: #fff;
+font-weight: 400;
+}
+
+#block-block-1 {
+margin: 42px 0px 10px 45px;
+}
+
+
+/*Styles form width*/
+#columns {
+margin-top: 170px;
+}
+
+#main-content {
+margin: 0;
+}
+
+#block-system-main{
+max-width:800px;
+margin:0 35px;
+}
+
+
+
+/*Styles whole page width*/
+#page{
+max-width:100%;
+}
+
+form{
+clear:both;
+padding-top: 10px;
+}
+
+/*Styles main gray footer color*/
+#footer{
+background-color:#E4E3E2;
+}
+
+/*Styles main green footer color*/
+#block-block-4{
+background-color:#81AA57;
+padding: 23px 0px 27px 40px;
+}
+
+/*Styles all footer text*/
+.bottom-footer{
+font-family: "FrutigerNextW01-UltraLi",Verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size:18px;
+color:#6b6764;
+width:100%;
+}
+
+.last-footer-header{
+font-family: "FrutigerLTW01-55Roman",Verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 17px;
+}
+
+.lfh-blurb{
+font-family: "FrutigerLTW01-45Light",Verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 17px;
+}
+
+.copyright{
+font-family: "FrutigerLTW01-45Light",Verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+margin-top:11px;
+font-size:13px;
+}
+
+/*Styles ul on footer*/
+.nav ul{
+margin-left: 22px;
+}
+
+
+/*SUB MENU*/
+.nav ul li ul {
+  padding: 0;
+  background: #97bb60; 
+  position: absolute;
+  top: 63px;
+  left: 0;
+ width: 275px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transiton: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -transition: opacity 0.2s;
+  margin-left: 3.5px;
+  color: #fff;
+   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2)
+}
+
+.nav ul li ul li { 
+  background: #97bb60; 
+  display: block; 
+  color: #fff;
+  padding: 0px;
+  width:100%;
+}
+
+.nav ul li ul li a{ 
+  color: #fff;
+  padding:10px;
+}
+
+.nav ul li ul li:hover { 
+background: #86ad4a;
+ }
+
+.nav ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/*Styles all Legends on forms*/
+legend{
+font-size: 26px;
+max-width: 100%;
+font-family: "FrutigerNextW01-UltraLi",Verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+color:#81AA57;
+float: left;
+margin-bottom: 10px;
+width: 100%;
+}
+
+#overlay-content legend {
+float: none;
+}
+
+/*Styles all Legends (that are links) on forms*/
+#webform-component-honor-memorial-info .fieldset-title, #webform-component-my-donation-will-be-matched .fieldset-title{
+font-size: 26px;
+max-width: 100%;
+font-family: "FrutigerNextW01-UltraLi",Verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+color:#81AA57;
+}
+
+/*Styles all labels on forms*/
+label{
+color:#6B6764;
+font-size: 17px;
+max-width: 100%;
+font-family: "FrutigerLTW01-45Light",Verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/*Styles all descriptions on forms*/
+.description {
+color:#6B6764;
+font-size:15px !important;
+font-family: "FrutigerLTW01-45Light",Verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+width:70%;
+}
+
+#webform-component-credit-card-information--required-information{
+color:#6B6764;
+font-size:15px !important;
+font-family: "FrutigerLTW01-45Light",Verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+width:70%;
+}
+
+/*Styles all sections on forms*/
+#webform-component-billing-information,
+ #webform-component-gift-information, 
+#webform-component-honor-memorial-info, 
+#webform-component-my-donation-will-be-matched,
+ #webform-component-honor-memorial-info-hon-mem-ack, 
+#webform-component-primary-registrant,
+#webform-component-s-packages,
+#webform-component-sj-sponsors,
+#webform-component-ticket-table-options,
+#webform-component-guest-names {
+border: none;
+margin-bottom:30px;
+max-width:100%;
+}
+
+/*Styles the next step button*/
+#edit-next{
+padding: 10px 20px;
+background-color: #6B6764;
+border: none;
+color: white;
+font-family:"FrutigerLTW01-45Light",Verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.btn{
+background-color: #FFF;
+color: #6B6764;
+text-decoration: none;
+padding: 10px 20px;
+margin-top: 17px;
+font-size: 17px;
+font-family: "FrutigerNextW01-UltraLi",Verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+width: 95px;
+}
+
+.btn:hover{
+  text-decoration: none;
+}
+
+/*Link styles*/
+.white{
+color: #6B6764;
+  text-decoration: none;
+}
+
+/*Hover for  links*/
+.white:hover{
+color: #6B6764;
+  text-decoration: none;
+}
+
+.sc-heading{
+font-size:29px;
+margin-bottom:15px;
+}
+
+.nav li a:hover{
+background-color:#81AA57;
+text-decoration:none;
+color:white;
+}
+
+/*Styles mobile nav title*/
+#mobile-nav > a {
+display: none;
+font-family:"Frutiger LT W01 65 Bold",Verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size:13px;
+color:black;
+letter-spacing:1px;
+text-decoration:none;
+
+}
+
+/*Styles mobile nav options*/
+#mobile-nav li {
+position: relative;
+font-family:"Frutiger LT W01 65 Bold",Verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 13px;
+list-style: none;
+}
+ 
+/*Styles mobile nav options*/
+#mobile-nav ul {
+display: none;
+position: absolute;
+top: 100%;
+transition: display 0.35s ease-in-out;
+}
+
+/*Styles mobile nav options (links)*/
+#mobile-nav ul li a{
+text-decoration:none;
+color:#fff;
+font-weight:700;
+font-size:20px;
+padding:8px 0;
+  width: 70%;
+}
+
+
+
+/*Styles mobile nav options hover*/
+/*Removes page title*/
+#page-title{
+display:none;
+}
+
+/*Desktop nav*/
+.nav {
+width: 100%;
+margin-top:49px;
+float: left;
+position:fixed;
+z-index:1;
+background-color:#fff;
+top:58px;
+left:0px;
+}
+
+/*Desktop nav options*/
+.nav li{
+display:inline-block;
+position: relative;
+padding: 8px 3.5px 0 3.5px;
+}
+
+/*Desktop nav option links*/
+.nav li a{
+font-family:"FrutigerLTW01-45Light",Verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+display: block;
+color:#97bb60;
+font-size: 17px;
+font-weight: 400;
+padding-bottom:15px;
+padding-top: 15px;
+}
+
+/*---------------------------------------------------------Mobile Nav & media size*/
+
+@media only screen and (max-width:1024px) {
+.social{
+float:right;
+margin-right:590px;
+}
+}
+
+
+/*---------------------------------------------------------Mobile Nav & media size*/
+
+@media only screen and (max-width:799px) {
+
+.social{
+display:none;
+}
+
+#header{
+  border-top: 8px solid #84B15A;
+  margin-bottom: 10px;
+  width: 100%;
+  position: inherit;
+  background-color: #fff;
+ padding-bottom: 0px;
+}
+
+.logo{
+display:none;
+}
+
+.logo-mobile{
+display:block;
+width: 96%;
+padding: 49px 0 27px 7px;
+}
+
+#menu-bar{
+display: block;
+width:100%;
+}
+
+#columns {
+  margin-top: 65px;
+}
+
+.nav ul{
+margin-left: none;
+}
+
+.pic-blue-block{
+border-bottom: none;
+ background-color: #81AA57;
+height: 0px;
+padding-bottom:182px;
+}
+
+
+
+.green-block{
+width: 84%;
+padding:0px 0 15px 40px;
+}
+
+#block-block-5{
+padding-top: 50px !important;
+}
+
+#block-block-2{
+margin:0;
+}
+
+.burger-closed{
+height: 25px;
+width: 48px;
+}
+
+/*Hides desktop nav from mobile view*/
+.nav {
+display:none;
+margin: 0;
+top: 190px;
+float: none;
+position:absolute;
+}
+
+.nav li a:hover{
+background-color:#6C6864;
+text-decoration:none;
+color:#fff;
+}
+
+
+#page{
+max-width: 100%;
+width: 100%;
+overflow: hidden;
+}
+
+form{
+margin: 0 auto;
+}
+
+
+#content{
+width:100%;
+background-color: #FFF;
+padding: 0px;
+}
+
+
+/*Edits input boxes for mobile*/
+#edit-submitted-first-name, #edit-submitted-last-name, #edit-submitted-address-line-1, #edit-submitted-address-line-2, #edit-submitted-business-name, #edit-submitted-city, #edit-submitted-position-or-job-title, #edit-submitted-postal-code, #edit-submitted-email-address, #edit-submitted-phone, #edit-submitted-country{
+width:110%;
+}
+
+/*mobile input fields - honor/mem and matched company*/
+#edit-submitted-gift-information-amount-of-donation-other, #edit-submitted-honor-memorial-info-hon-mem-first, #edit-submitted-honor-memorial-info-hon-mem-last, #edit-submitted-honor-memorial-info-hon-mem-ack-recipient-first-name, #edit-submitted-honor-memorial-info-hon-mem-ack-recipient-last-name, #edit-submitted-honor-memorial-info-hon-mem-ack-recipient-address-line-1, #edit-submitted-honor-memorial-info-hon-mem-ack-recipient-address-line-2, #edit-submitted-honor-memorial-info-hon-mem-ack-recipient-city, #edit-submitted-honor-memorial-info-hon-mem-ack-recipient-postal-code, #edit-submitted-honor-memorial-info-hon-mem-ack-ack-country, #edit-submitted-honor-memorial-info-hon-mem-ack-ack-email-address, #edit-submitted-my-donation-will-be-matched-company-name{
+width:90%
+}
+
+/*mobile input fields - primary billing*/
+#edit-submitted-primary-registrant-don-first-name, #edit-submitted-primary-registrant-don-last-name, #select-or-other-other form-text, #edit-submitted-primary-registrant-don-address-line-1, #edit-submitted-primary-registrant-don-address-line-2, #edit-submitted-primary-registrant-don-city, #edit-submitted-primary-registrant-don-postal-code, #edit-submitted-primary-registrant-don-email-address, #edit-submitted-primary-registrant-don-phone {
+width:95%;
+}
+
+/*mobile input fields - billing*/
+#edit-submitted-billing-information-title-other, #edit-submitted-gift-information-amount-of-donation-other, #edit-submitted-billing-information-first-name, #edit-submitted-billing-information-last-name, #edit-submitted-billing-information-organization, #edit-submitted-billing-information-address-line-1, #edit-submitted-billing-information-address-line-2, #edit-submitted-billing-information-city, #edit-submitted-billing-information-postal-code, #edit-submitted-billing-information-email-address, #edit-submitted-billing-information-phone, #edit-submitted-billing-information-company-or-organization-name, #edit-submitted-billing-information-position-or-job-title, #edit-submitted-matched-gift-company-name{
+width:95%;
+}
+
+/*mobile input fields selection width*/
+#edit-submitted-billing-information-country, #edit-submitted-gift-information-gift-designations, #edit-submitted-primary-registrant-don-country{
+width:50%;
+}
+
+#edit-submitted-credit-card-information-cardholder-name, #edit-submitted-credit-card-information-credit-card-number, #edit-submitted-credit-card-information-cvv-code, #edit-submitted-employee-information-country{
+width:95%;
+}
+
+/*mobile input fields - employee billing*/
+#edit-submitted-employee-information-first-name, #edit-submitted-employee-information-last-name, #edit-submitted-employee-information-list-name, #edit-submitted-employee-information-department, #edit-submitted-employee-information-employee-id, #edit-submitted-employee-information-address-line-1, #edit-submitted-employee-information-address-line-2, #edit-submitted-employee-information-city, #edit-submitted-employee-information-postal-code, #edit-submitted-employee-information-email-address, #edit-submitted-employee-information-phone, #edit-submitted-employee-information-title-other{
+width:95%;
+}
+
+/*collapsed fields spacing*/
+#webform-component-honor-memorial-info{
+margin-bottom:40px;
+}
+
+/*Styles space under section*/
+#webform-component-my-donation-will-be-matched{
+margin-bottom:40px;
+}
+
+/*Styles space under section*/
+ #webform-component-gift-information{
+margin-bottom:20px;
+}
+
+/*Styles mobile footer*/
+.bottom-footer{
+width:100%;
+margin-right:10px;
+}
+
+
+#block-block-1{
+  margin: 30px 20px 20px 40px;
+}
+
+
+.block-content ul, .block-content ol {
+margin:0;
+}
+
+.block-content ul, .block-content ol {
+padding: 0 0 0 0px;
+}
+
+/*make mobile nav appear*/
+#mobile-nav {
+		position: relative;
+                background-color:#6C6864;
+	}
+	#mobile-nav:not(:target) > a:first-of-type,
+	#mobile-nav:target > a:last-of-type {
+	       display: block;
+               background-color:#a4c96d;
+               padding: 12px 2px 12px 0;
+               text-align: right;
+	}
+	#mobile-nav > ul {
+		position: relative;
+		height: auto;
+		display: none;
+		left: 0;
+		right: 0;
+	}
+	#mobile-nav:target > ul {
+		display: block;
+               margin:10px 0 0px 20px;
+	}
+	#mobile-nav > ul > li {
+		float: none;
+		width: 100%;
+	}
+}
+
+/* FOOTER */
+.footer {
+	height: 360px;
+	width: 100%;
+    bottom: 0;
+
+    position: relative;
+    font-weight: bold;
+    display: block;
+    clear: both;
+    background-color: #244662;
+    color: #ffffff;
+    margin-top: 0;
+    /*margin-top: 40px;*/
+}
+.stay-updated {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 40px;
+    border-radius: 50px;
+    color: #84b15a;
+    border: 0;
+    background-color: #FFFFFF;
+    box-shadow: -10px 10px 5px rgba(107,103,100,.2);
+    cursor: pointer;
+    white-space: nowrap;
+    display: inline-block;
+}
+.stay-updated:hover {
+	color: #84b15a;
+	box-shadow: -5px 5px 5px rgba(107,103,100,.2)
+}
+
+#footer-update-text {
+    width: 550px;
+    margin: 0 auto;
+}
+
+#updated-footer {
+    height: 125px;
+    background-color:#84b15a;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center;
+}
+
+#updated-footer h3 {
+    display: inline-block;
+    margin: 45px 30px 0 0;
+    font-size: 22px;
+}
+
+#footer .stay-updated {
+	position: relative;
+}
+
+.footer .address {
+	line-height: 1.5em;
+    margin-top: 40px;
+}
+
+.footer-contact {
+
+}
+
+#social-footer {
+	margin: 30px auto;
+}
+
+#social-footer a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+#social-footer a img {
+	height: 25px;
+}
+
+.copyright {
+	margin: 0 0;
+	font-weight: normal;
+}
+
+/* COLORS AND DECORATION CLASSES */
+.underline {
+	text-decoration: underline;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.green-back {
+	background-color: #f3f6f9;
+}
+
+.green {
+	color: #97bb60;
+}
+
+.orange-back {
+	background-color: #F4F7F9;
+}
+
+/*orange is now blue.*/
+.orange {
+	color: #44697b;
+}
+
+p a {
+    color: #ee7821;
+    text-decoration: underline;
+}
+
+.white {
+	color: #ffffff;
+}
+
+.grey-back {
+	background-color: #efefef;
+}
+
+.shadow {
+	box-shadow: -10px 10px 5px rgba(107,103,100,.2);
+}
+
+
+.full-image img {
+	width: 100%;
+}
+
+#block-block-1 {
+    margin: 0 0 0 0;
+}

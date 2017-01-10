@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /wp-content/wppa-pl
+RewriteRule ^Test-event/(.*) /wp-content/uploads/wppa-source/album-1/$1 [NC]
+RewriteRule ^New-Album/(.*) /wp-content/uploads/wppa-source/album-2/$1 [NC]
+</IfModule>

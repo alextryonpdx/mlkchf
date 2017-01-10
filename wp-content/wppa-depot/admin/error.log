@@ -1,0 +1,6 @@
+{b}Err{/b}: on:October 9, 2015 7:43 pm: alex: Unable to save session.
+#0  wppa_log() called at [/home3/alextryo/public_html/mlkchf/wp-content/plugins/wp-photo-album-plus/wppa-session.php:92]
+#1  wppa_session_end()
+#2  call_user_func_array() called at [/home3/alextryo/public_html/mlkchf/wp-includes/plugin.php:503]
+#3  do_action() called at [/home3/alextryo/public_html/mlkchf/wp-includes/load.php:611]
+
