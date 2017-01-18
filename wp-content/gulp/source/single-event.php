@@ -265,7 +265,14 @@
 		 						$videoCount++ ;
 		 						?>
 	 						<!-- embed videos -->
-	 						<div class="event-vid" onclick="showVideo(<?php echo $videoCount; ?>)">
+	 						<?php 
+							if( get_sub_field('override') ){ ?>
+								<div class="event-vid" onclick="showVideoEmbed(<?php echo $videoCount; ?>)">
+							<?php 
+							} else {?>
+								<div class="event-vid" onclick="showVideo(<?php echo $videoCount; ?>)">
+							<?php } ?>
+	 						
 								<div class="player">
 									<img class="video-thumb" src="<?php echo the_sub_field('thumbnail'); ?>">
 								</div>					
@@ -287,9 +294,15 @@
 			$videoCount = 0;
 			while (have_rows('videos')): the_row(); 
 				$videoCount++;
+				// echo the_sub_field('override');
 					?>
-				
+						<?php 
+					if( get_sub_field('override') ){ ?>
+						<div class="event-vid mobile-only" onclick="showVideoEmbed(<?php echo $videoCount; ?>)">
+					<?php 
+					} else {?>
 						<div class="event-vid mobile-only" onclick="showVideo(<?php echo $videoCount; ?>)">
+					<?php } ?>
 								<h3><?php echo get_sub_field('title'); ?></h3>
 								<div class="player">
 									<img class="video-thumb" src="<?php echo the_sub_field('thumbnail'); ?>">
@@ -298,11 +311,23 @@
 					
 				
 				<div id="<?php echo $videoCount; ?>-overlay" class="video-overlay">
-					<a class="vidcloseIcon" onclick="hideVideo(<?php echo $videoCount; ?>);">X</a>
+					<?php 
+					if( get_sub_field('override') ){ ?>
+						<a class="vidcloseIcon" onclick="hideVideoEmbed(<?php echo $videoCount; ?>);">X</a>
+					<?php 
+					} else {?>
+						<a class="vidcloseIcon" onclick="hideVideo(<?php echo $videoCount; ?>);">X</a>
+					<?php } ?>
+					
+					<?php 
+					if(get_sub_field('override')){
+						echo the_sub_field('video_embed');
+					} else { ?>
 					<iframe width="560" height="315" 
 					src="<?php the_sub_field('video'); ?>?enablejsapi=1&version=3&playerapiid=ytplayer&showinfo=0&rel=0" 
 					frameborder="0" allowfullscreen></iframe>
 					<!-- <h3><?php echo get_sub_field('title'); ?></h3> -->
+					<?php } ?>
 				</div>	 
 				
 		<?php endwhile; ?>
@@ -312,14 +337,14 @@
 
 
 
-
-	 		<div class="album green-back">
-		 		<div id="album" style="overflow:hidden">
-					<?php $count = 0;
+<?php $count = 0;
 					if (have_rows('photos')):
 						$gallery = array();
 						$total = count(get_field('photos'));
 					?>
+	 		<div class="album green-back">
+		 		<div id="album" style="overflow:hidden">
+					
 
 					<div id="img-thumb-gallery">
  						<?php while (have_rows('photos')): the_row();
@@ -343,7 +368,7 @@
 	 						<!-- <div class="event-img-thumb" > -->
  							<a class="fancybox img" 
 	 							href="<?php echo $image['url'] ?>"
-	 							title="<?php echo $count; ?>/<?php echo $total?><br><?php echo $caption ?> | <?php echo get_the_title(); ?><br><hr id='fancyHR'><span id='playPause'></span>"
+	 							title="<span class='non-mobile'><?php echo $count; ?>/<?php echo $total?><br><?php echo $caption ?> | <?php echo get_the_title(); ?><br></span><hr id='fancyHR'><span id='playPause'></span>"
 	 							data-index="<?php echo $count; ?>"
  								data-fancybox-group="gallery">
  								<img class="event-img-thumb <?php echo $class; ?>" 
@@ -473,7 +498,10 @@
     right: 0;
     width: 36px;
     height: 30px;
-    padding: 8px 0;
+    /*padding: 8px 0;*/
+    padding: 3px 0 0;
+    font-size: 1.75em;
+    font-weight: bold;
     text-align: center;
     cursor: pointer;
     z-index: 8040;
@@ -682,26 +710,12 @@ function photoshow(){
 
 
 </script>
-<!-- <div id="photoshow">
-	<img class="slick-nav" id="slick-prev" src="<?php echo get_template_directory_uri(); ?>/img/slider/left-arrow.png">
-	<img class="slick-nav" id="slick-next" src="<?php echo get_template_directory_uri(); ?>/img/slider/right-arrow.png">
-<div id="gallery"> -->
-<?php //foreach ($gallery as $photo) { ?>
-	<!-- 	<div class="event-img-full" id="full<?php echo $photo[2]; ?>">
-			<img class="<?php // echo $photo[2]; ?>" src="<?php echo $photo[0]; ?>">
-			<div class="event-caption-box">
-				<p class="album-index"><?php echo $photo[3] ?>/<span class="total-pics"></span></p>
-				<p class="img-caption"><?php echo $photo[1]; ?></p>
-				<p class="event-name"><?php echo $photo[4] ?></p>
-			</div>
-		</div> -->
-<?php //} ?>
-<!-- </div> -->
-					<?php	endif; ?>
+
+					
 				</div>
 			</div>
 		<!-- end photo album -->
-
+<?php	endif; ?>
 
 	</main>
 
@@ -713,10 +727,14 @@ function photoshow(){
 
 <?php if (have_rows('partner_group')): ?>
 	<div class="row partner-block green-back text-center">
-		<h2><?php the_field('partners_heading')?></h2>
+		<?php if( get_field('partners_heading') ): ?>
+			<h2><?php the_field('partners_heading')?></h2>
+		<?php endif; ?>
 		<?php  while (have_rows('partner_group')): the_row(); ?>
 			<div class="row">
-				<h2><?php the_sub_field('partner_subheading'); ?></h2>
+				<?php if( get_sub_field('partner_subheading') ): ?>
+					<h2><?php the_sub_field('partner_subheading'); ?></h2>
+				<?php endif; ?>
 				<div id="partners-grid" class="centered">
 					<?php if (have_rows('partner_logo')): while (have_rows('partner_logo')) : the_row(); 
 						$logo = '';

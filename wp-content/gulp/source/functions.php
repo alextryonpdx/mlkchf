@@ -37,16 +37,26 @@ add_action('do_meta_boxes', 'replace_featured_image_box');
 function replace_featured_image_box()  
 {  
     remove_meta_box( 'postimagediv', 'post', 'side' );  
-    add_meta_box('postimagediv', __('Thumbnail Image'), 'post_thumbnail_meta_box', 'post', 'side', 'low'); 
+    add_meta_box('postimagediv', __('Thumbnail'), 'post_thumbnail_meta_box', 'post', 'side', 'low'); 
 
      remove_meta_box( 'postimagediv', 'event', 'side' );  
-    add_meta_box('postimagediv', __('Thumbnail Image'), 'post_thumbnail_meta_box', 'event', 'side', 'low');
+    add_meta_box('postimagediv', __('Thumbnail'), 'post_thumbnail_meta_box', 'event', 'side', 'low');
 
      remove_meta_box( 'postimagediv', 'initiative', 'side' );  
-    add_meta_box('postimagediv', __('Thumbnail Image'), 'post_thumbnail_meta_box', 'initiative', 'side', 'low'); 
+    add_meta_box('postimagediv', __('Thumbnail'), 'post_thumbnail_meta_box', 'initiative', 'side', 'low'); 
 
     remove_meta_box( 'postimagediv', 'giving', 'side' );  
-    add_meta_box('postimagediv', __('Thumbnail Image'), 'post_thumbnail_meta_box', 'giving', 'side', 'low');
+    add_meta_box('postimagediv', __('Thumbnail'), 'post_thumbnail_meta_box', 'giving', 'side', 'low');
+
+    remove_meta_box( 'postimagediv', 'page', 'side' );  
+    add_meta_box('postimagediv', __('Thumbnail'), 'post_thumbnail_meta_box', 'page', 'side', 'low'); 
+
+    remove_meta_box( 'postimagediv', 'honoree bio', 'side' );  
+    add_meta_box('postimagediv', __('Thumbnail'), 'post_thumbnail_meta_box', 'honoree bio', 'side', 'low'); 
+
+    remove_meta_box( 'postimagediv', 'member bio', 'side' );  
+    add_meta_box('postimagediv', __('Thumbnail'), 'post_thumbnail_meta_box', 'member bio', 'side', 'low'); 
+
 }
 
 
@@ -55,8 +65,13 @@ add_action('admin_footer', 'add_title_to_editor');
 
 function add_title_to_editor() {
     global $post;
-    if (get_post_type($post) == 'post') : ?>
-        <script> jQuery('<h2 style="margin: 20px 0 0;">Feature Content</h2>').insertBefore('#postdivrich'); </script>
+    if (get_post_type($post) == 'post' || get_post_type($post) == 'initiative') : ?>
+        <script> jQuery('<h2 style="margin: 20px 0px -30px; padding-left: 0;">Teaser</h2><br><p style="margin-bottom:0;">130 – 160 characters, including spaces</p>').insertBefore('#postdivrich'); </script>;
+        <style>
+            .mce-edit-area iframe { 
+                height:100px !important;
+            }
+        </style>;
     <? endif;
 }
 

@@ -320,20 +320,47 @@
 						?>
 
 					<div class="event-video">
-
-						<!-- full width video -->
-						<!-- <iframe width="560" height="315" src="<?php echo get_sub_field('video'); ?>?enablejsapi=1&version=3&playerapiid=ytplayer&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe> -->
-						<div class="player">
+						<?php 
+						if( get_sub_field('override') ){ ?>
+							<div class="player">
+							<img class="video-thumb" 
+								src="<?php echo the_sub_field('thumbnail'); ?>"
+								onclick="showVideoEmbed(<?php echo $videoCount; ?>)">
+						</div>
+						<?php 
+						} else { ?>
+							<div class="player">
 							<img class="video-thumb" 
 								src="<?php echo the_sub_field('thumbnail'); ?>"
 								onclick="showVideo(<?php echo $videoCount; ?>)">
-						</div>
+							</div>
+						<?php } ?>
+						<!-- full width video -->
+						<!-- <iframe width="560" height="315" src="<?php echo get_sub_field('video'); ?>?enablejsapi=1&version=3&playerapiid=ytplayer&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe> -->
+						<!-- <div class="player">
+							<img class="video-thumb" 
+								src="<?php echo the_sub_field('thumbnail'); ?>"
+								onclick="showVideo(<?php echo $videoCount; ?>)">
+						</div> -->
 
 						<div id="<?php echo $videoCount; ?>-overlay" class="video-overlay">
-							<a class="vidcloseIcon" onclick="hideVideo(<?php echo $videoCount; ?>);">X</a>
+							<?php 
+							if( get_sub_field('override') ){ ?>
+								<a class="vidcloseIcon" onclick="hideVideoEmbed(<?php echo $videoCount; ?>);">X</a>
+							<?php 
+							} else {?>
+								<a class="vidcloseIcon" onclick="hideVideo(<?php echo $videoCount; ?>);">X</a>
+							<?php } ?>
+							
+							<?php 
+							if(get_sub_field('override')){
+								echo the_sub_field('video_embed');
+							} else { ?>
 							<iframe width="560" height="315" 
-							src="<?php echo $vid; ?>?enablejsapi=1&version=3&playerapiid=ytplayer&showinfo=0&rel=0" 
+							src="<?php echo $vid ?>?enablejsapi=1&version=3&playerapiid=ytplayer&showinfo=0&rel=0" 
 							frameborder="0" allowfullscreen></iframe>
+							<!-- <h3><?php echo get_sub_field('title'); ?></h3> -->
+							<?php } ?>
 						</div>
 
 						<div class="event-video-info">

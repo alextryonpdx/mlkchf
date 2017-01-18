@@ -1733,7 +1733,9 @@ section.recent-news-tall img {
 .partner-block {
     padding-bottom: 60px;
 }
-
+.partner-block h2 {
+    margin: 60px auto 0px;
+}
 #partners-grid a.half,
 #partners-grid>img.half {
   width: 10%;
@@ -3718,7 +3720,7 @@ body {
 
 #masterplan-overlay iframe,
 .video-overlay iframe {
-  height: 39.25vw;
+  height: 39.35vw;
   width: 70vw;
   top: 150px;
   float: left;
@@ -3734,10 +3736,13 @@ body {
   width: 35px;
   top: 135px;
   z-index: 99;
+  font-weight: bold;
   cursor: pointer;
   width: 36px;
   height: 30px;
-  padding: 8px 0;
+  /*padding: 8px 0;*/
+  padding: 3px 0 0;
+  font-size: 1.75em;
   text-align: center;
   cursor: pointer;
   z-index: 8040;

@@ -94,12 +94,32 @@ function showVideo(vid){
 	$('body').css('overflow', 'hidden');
 	$( $frame )[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*'); 
 }
+function showVideoEmbed(vid){
+	$overlay = '#' + vid + '-overlay';
+	$frame = $overlay + ' iframe';
+	$( $frame ).attr( 'src', function ( i, val ) { 
+		return val; 
+	})
+	$( $overlay ).css('display','flex');
+	$( $overlay ).css('display', '-webkit-box');
+	$( $overlay ).css('display', '-webkit-flex');
+	$( $overlay ).css('display', '-ms-flexbox');
+	$('body').css('overflow', 'hidden');
+
+}
 function hideVideo(vid){
 	$overlay = '#' + vid + '-overlay';
 	$frame = $overlay + ' iframe';
 	$( $overlay ).hide();
 	$('body').css('overflow', 'auto');
 	$( $frame )[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*'); 
+}
+function hideVideoEmbed(vid){
+	$overlay = '#' + vid + '-overlay';
+	$frame = $overlay + ' iframe';
+	$( $overlay ).hide();
+	$('body').css('overflow', 'auto');
+	$( $frame ).attr('src', $($frame).attr('src'));
 }
 
 
