@@ -509,8 +509,8 @@
 }
 
 hr#fancyHR {
-    margin: 10px 0 60px -10%;
-    width: 120%;
+    margin: 10px 0 60px 0;
+    width: 100%;
 }
 span#playPause {
     display: inline-block;
@@ -621,13 +621,14 @@ function fancybox(){
 	    	nextEffect: 'fade',
 	    	margin: setMargin,
 	    	maxWidth: setMaxWidth,
+	    	autoCenter: false,
 	    	loop: true,
-	    	helpers: {
-	            overlay: {
-	                locked: setLock
-	            },
-	            buttons: {}
-	        },
+	    	// helpers: {
+	     //        overlay: {
+	     //            locked: false,
+	     //        },
+	     //        buttons: {},
+	     //    },
 	    	afterShow: function () {
 	    		$('.fancybox-close').html('X');
 	            // $(".fancybox-outer").on("mouseenter", function () {
@@ -665,6 +666,7 @@ function fancybox(){
 	        	$('body').removeClass('no-scroll');
 	        	$('#playShow').remove();
 	        	$('#fakeboxNav').hide();
+	        	playMode = 'playing';
 	        }
 	        
     });
