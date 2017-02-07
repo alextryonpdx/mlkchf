@@ -367,8 +367,12 @@ endwhile;
 							// if( $link ){ ?>
 								<!-- <a href="<?php echo $link ?>"><h3><?php echo get_sub_field('title', $p->ID); ?></h3></a> -->
 							<?php // } else {?>
+							<?php 
+							if( get_sub_field('override') ){ ?>
+								<a onclick="showVideoEmbed(<?php echo $videoCount; ?>)"><h3><?php echo get_sub_field('title', $p->ID); ?></h3></a>
+							<?php } else { ?>
 								<a onclick="showVideo(<?php echo $videoCount; ?>)"><h3><?php echo get_sub_field('title', $p->ID); ?></h3></a>
-
+							<?php } ?>
 								<?php //};
 								?> 
 						</div>

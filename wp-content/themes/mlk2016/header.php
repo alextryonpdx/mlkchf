@@ -11,8 +11,8 @@
 		<link rel="icon shrotcut" href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico?v=2" />
 
 
-		<link href="//cdn.rawgit.com/noelboss/featherlight/1.6.1/release/featherlight.min.css" type="text/css" rel="stylesheet" />
-		<link href="//cdn.rawgit.com/noelboss/featherlight/1.6.1/release/featherlight.gallery.min.css" type="text/css" rel="stylesheet" />
+		<!-- <link href="//cdn.rawgit.com/noelboss/featherlight/1.6.1/release/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+		<!-- <link href="//cdn.rawgit.com/noelboss/featherlight/1.6.1/release/featherlight.gallery.min.css" type="text/css" rel="stylesheet" /> -->
 
         <!-- USE THIS CHEAT WOW!!!! -->
         <script>
@@ -25,15 +25,16 @@
 		<!--buil d:js wp-content/themes/mlk2016/js/plugins.js -->
 		<script src="<?php echo get_template_directory_uri(); ?>/js/plugins/slick.min.js"></script>
 		
-		<script src="//cdn.rawgit.com/noelboss/featherlight/1.6.1/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="//cdn.rawgit.com/noelboss/featherlight/1.6.1/release/featherlight.gallery.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <script src="//cdn.rawgit.com/noelboss/featherlight/1.6.1/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+		<!-- <script src="//cdn.rawgit.com/noelboss/featherlight/1.6.1/release/featherlight.gallery.min.js" type="text/javascript" charset="utf-8"></script> -->
 		
 		<script src="<?php echo get_template_directory_uri(); ?>/js/plugins/unslider-min.js"></script>
 		<!-- <script src="<?php echo get_template_directory_uri(); ?>/js/plugins/scrollme.js"></script> -->
 		<!--endb uild-->		
 		<script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
 		<!-- <script src="<?php echo get_template_directory_uri(); ?>/js/plugins.js"></script> -->		
-
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.js"></script>
 
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/js/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>

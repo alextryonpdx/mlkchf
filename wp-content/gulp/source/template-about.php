@@ -49,7 +49,7 @@
 						<div class="non-mobile">
 							<?php 
 							if( $text ){
-								echo '<h3>' . $text . '</h3>';
+								echo  $text ;
 							} elseif( $foreground_image ){ ?>
 								<img src="<?php echo $foreground_image?>">
 							<?php } ?>

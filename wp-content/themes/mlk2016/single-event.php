@@ -158,7 +158,7 @@
 		$linkCount = 0;
 		// $videoCount++;
 				?>
-				<hr>
+				<hr class="non-mobile">
 
 <!-- 		<div class="centered">
 			<a class="read-more non-mobile all-vids-event" href="<?php echo get_permalink(824); ?>">All Videos <span class="carrot">&raquo;</span></a>
@@ -194,7 +194,9 @@
 								
 									<img class="video-thumb" src="<?php echo the_sub_field('thumbnail'); ?>">
 													
-								<h3><?php echo get_sub_field('title'); ?></h3>
+									<?php if( strlen(get_sub_field('title')) > 1) { ?>
+										<h3><?php echo get_sub_field('title'); ?></h3>
+									<?php } ?>
 							</a>
 						<?php endwhile;?>
 					</div>
@@ -215,7 +217,9 @@
 								
 							<img class="video-thumb" src="<?php echo the_sub_field('thumbnail'); ?>">
 												
-							<h3><?php echo get_sub_field('title'); ?></h3>
+							<?php if( strlen(get_sub_field('title')) > 1) { ?>
+								<h3><?php echo get_sub_field('title'); ?></h3>
+							<?php } ?>
 						</a>
 					
 				
@@ -347,6 +351,7 @@
 					
 
 					<div id="img-thumb-gallery">
+					<div id="photo-gallery" class="page-anchor"></div>
  						<?php while (have_rows('photos')): the_row();
 	 						$image = get_sub_field('photo');
  							$caption = get_sub_field('caption');
@@ -368,14 +373,14 @@
 	 						<!-- <div class="event-img-thumb" > -->
  							<a class="fancybox img" 
 	 							href="<?php echo $image['url'] ?>"
-	 							title="<span class='non-mobile'><?php echo $count; ?>/<?php echo $total?><br><?php echo $caption ?> | <?php echo get_the_title(); ?><br></span><hr id='fancyHR'><span id='playPause'></span>"
+	 							title="<span style='float:left'><span style='font-family:Frutiger LT W01\ 65 Bold;'><?php echo $count; ?>/<?php echo $total?></span> | <?php echo get_the_title(); ?> | <?php echo $caption ?></span><span style='float:right;' id='playPause'></span>"
 	 							data-index="<?php echo $count; ?>"
  								data-fancybox-group="gallery">
  								<img class="event-img-thumb <?php echo $class; ?>" 
 	 							id="thumb<?php echo $count; ?>"
 	 							src="<?php echo $image['sizes']['large']?>">	
 	 						</a>		
-	 						
+	 						<!-- title="<span class='non-mobile'><?php echo $count; ?>/<?php echo $total?> | <?php echo get_the_title(); ?> | <?php echo $caption ?><br></span><hr id='fancyHR'><span id='playPause'></span>" -->
 
 							
 	 						<!-- </div> -->
@@ -393,6 +398,18 @@
 	<a class="fakebox-nav fakebox-prev" onclick="$.fancybox.prev()"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/next_white.svg"></a>
 	<a class="fakebox-nav fakebox-next" onclick="$.fancybox.next()"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/next_white.svg"></a>
 </div>
+<div id="fakeboxNavMobile">
+	<a class="fakebox-nav fakebox-prev" onclick="$.fancybox.prev()"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/next.svg"></a>
+	<div id="mobileNavCenterBlock">
+		<div id='playPauseMobile'></div>
+
+		<div id="mobileTally">
+			<span id="index"></span>/<?php echo $count ?>
+		</div>
+		
+	</div>
+	<a class="fakebox-nav fakebox-next" onclick="$.fancybox.next()"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/next.svg"></a>
+</div>
 <style>
 #photoshow {
     position: fixed;
@@ -404,7 +421,9 @@
     z-index: 999;
 }
 
-
+.fancybox-title-float-wrap .child{
+	width: 100%!important;
+}
 #fakeboxNav {
 	display: none;
 }
@@ -481,7 +500,7 @@
 }
 #playShow {
     position: relative;
-    margin-top: 16px;
+    /*margin-top: 16px;*/
     /* width: 100px; */
     text-align: center;
     font-size: 18px;
@@ -509,17 +528,75 @@
 }
 
 hr#fancyHR {
-    margin: 10px 0 60px 0;
+    margin: 10px 0 30px 0;
     width: 100%;
 }
 span#playPause {
     display: inline-block;
-    margin-top: -56px;
-    width: 100%;
-    float: left;
+    /*margin-top: -40px;*/
+    /*width: 100%;*/
+    /*float: left;*/
 }
 
+.fancybox-overlay {
+  background: rgba(0,0,0,.8);
+  background-color: rgba(0,0,0,.8);
+}
+
+#fakeboxNavMobile{
+	display: none;
+}
 @media screen and (max-width: 768px ){
+	#faxeboxNav {
+		display: none;
+	}
+	#fakeboxNavMobile {
+	    position: fixed;
+	    bottom: 0px;
+	    width: 100%;
+	    z-index: 99999;
+	    visibility: visible;
+	    left: 0;
+	    right: 0;
+	    text-align: center;
+	    height: 50px;
+	    background-color: rgba(256,256,256,1);
+	    display: none;
+	}
+	.fancybox-title-float-wrap {
+	    display: none;
+	}
+	div#mobileTally {
+	    display: inline-block;
+	    float: right;
+	    font-size: 18px;
+	    color: #000;
+	    /* margin-left: 130px; */
+	    margin-top: 13px;
+	}
+	#mobileNavCenterBlock {
+	    width: 95px;
+	    display: inline-block;
+	}
+	#playPauseMobile {
+		float: left;
+	}
+	#playShow {
+	    position: relative;
+	    margin-top: 10px;
+	    width: 30px;
+	    text-align: center;
+	    font-size: 18px;
+	    /* left: calc(50% - 50px); */
+	    color: #6b6764;
+	    cursor: pointer;
+	    z-index: 999999;
+	    display: inline-block;
+	    float: left;
+	    /* display: none; */
+	    margin-left: 0;
+	    margin-right: 0;
+	}
 	/*#playShow {
 		bottom: 7px;
 		position: fixed;
@@ -542,7 +619,7 @@ span#playPause {
 	}
 	.fakebox-prev {
 	    left: -30px;
-	    bottom: -25px;
+	    bottom: -30px;
 	    top: auto;
 	    height: 110px;
 	    width: 110px;
@@ -550,7 +627,7 @@ span#playPause {
 	}
 	.fakebox-next {
 	    right: -30px;
-	    bottom: -25px;
+	    bottom: -30px;
 	    top: auto;
 	    height: 110px;
 	    width: 110px;
@@ -605,30 +682,34 @@ var playMode = 'playing';
 
 function fancybox(){
 	if( $(window).width() > 768 ){
-		setMargin = [20, 20, 60, 20];
-		setMaxWidth = '90%';
-		setLock = false
+		setMargin = [0, 0, 0, 0];
+		setMaxWidth = 1000000000000;
+		setLock = false;
+		setCenter = true;
+		setPadding = [0,0,0,0];
 	} else {
-		setMargin = [0, 0, 40, 0];
+		setMargin = [0, 0, 0, 0];
 		setMaxWidth = 100000000000;
-		setLock = true
+		setLock = false;
+		setCenter = true;
+		setPadding = [0,0,0,0];
 	}
 	$(".fancybox").fancybox({
 	    	autoPlay: true,
 	    	arrows: false,
-	    	padding: [0,0,15,0],
+	    	padding: setPadding,
 	    	prevEffect: 'fade',
 	    	nextEffect: 'fade',
 	    	margin: setMargin,
 	    	maxWidth: setMaxWidth,
-	    	autoCenter: false,
+	    	autoCenter: setCenter,
+	    	fitToView: true,
 	    	loop: true,
-	    	// helpers: {
-	     //        overlay: {
-	     //            locked: false,
-	     //        },
-	     //        buttons: {},
-	     //    },
+	    	helpers: {
+	            overlay: {
+	                locked: true,
+	            }
+	        },
 	    	afterShow: function () {
 	    		$('.fancybox-close').html('X');
 	            // $(".fancybox-outer").on("mouseenter", function () {
@@ -640,19 +721,44 @@ function fancybox(){
 	            //     console.log('leave');
 	            // });
 	            // $('#playShow').remove();
-	        	if(playMode == 'playing'){
-	        		$('#playPause').html('<a onclick="toggleSlideshow()" id="playShow"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/Pause.png">Pause</a>');
-	        	} else {
-	        		$('#playPause').html('<a onclick="toggleSlideshow()" id="playShow"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/Play.png">Play</a>');	
-	        	}
+	            $('.fancybox-wrap').swipe({
+	                swipe : function(event, direction) {
+	                    if (direction === 'right') {
+	                        $.fancybox.prev( direction );
+	                    } if (direction === 'left') {
+	                        $.fancybox.next( direction );
+	                    }
+	                }
+	            });
+	            if($(window).width() > 768){
+	            	if(playMode == 'playing'){
+		        		$('#playPause').html('<a onclick="toggleSlideshow()" id="playShow"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/Pause.png"></a>');
+		        	} else {
+		        		$('#playPause').html('<a onclick="toggleSlideshow()" id="playShow"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/Play.png"></a>');	
+		        	}
+	            } else {
+	            	if(playMode == 'playing'){
+		        		$('#playPauseMobile').html('<a onclick="toggleSlideshowMobile()" id="playShow"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/Pause.png"></a>');
+		        	} else {
+		        		$('#playPauseMobile').html('<a onclick="toggleSlideshowMobile()" id="playShow"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/Play.png"></a>');	
+		        	}
+	            }
 	        },
 	        beforeShow: function(){
 	        	$('html').addClass('no-scroll');
 	        	$('body').addClass('no-scroll');
-	        	$('#fakeboxNav').show();
+	        	if($(window).width() > 768){
+		        	$('#fakeboxNav').show();
+		        } else {
+		        	$('#fakeboxNavMobile').show();
+		        }
 	        	// $('.fancybox-close').html('X');
 	        	
 	        },
+	        afterLoad: function(current, previous) {
+		        console.info( current.index );
+		        $('#mobileTally #index').html((current.index+1));
+		    },
 	        beforeLoad: function(){
 	        	// $('#playShow').show();
 	        	$('.fancybox-close').html('X');
@@ -665,7 +771,11 @@ function fancybox(){
 	        	$('html').removeClass('no-scroll');
 	        	$('body').removeClass('no-scroll');
 	        	$('#playShow').remove();
-	        	$('#fakeboxNav').hide();
+	        	if($(window).width() > 768){
+		        	$('#fakeboxNav').hide();
+		        } else {
+		        	$('#fakeboxNavMobile').hide();
+		        }
 	        	playMode = 'playing';
 	        }
 	        
@@ -677,16 +787,28 @@ function toggleSlideshow(){
 	if(playMode == 'playing'){
 		$.fancybox.play();
 		playMode = 'paused';
-		$('#playPause').html('<a onclick="toggleSlideshow()" id="playShow"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/Play.png">Play</a>');	
+		$('#playPause').html('<a onclick="toggleSlideshow()" id="playShow"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/Play.png"></a>');	
 	} else {
 		$.fancybox.play();
 		$.fancybox.next()
 		playMode = 'playing';
-		$('#playPause').html('<a onclick="toggleSlideshow()" id="playShow"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/Pause.png">Pause</a>');
+		$('#playPause').html('<a onclick="toggleSlideshow()" id="playShow"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/Pause.png"></a>');
 	}
 	
 }
-
+function toggleSlideshowMobile(){
+	if(playMode == 'playing'){
+		$.fancybox.play();
+		playMode = 'paused';
+		$('#playPauseMobile').html('<a onclick="toggleSlideshow()" id="playShow"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/Play.png"></a>');	
+	} else {
+		$.fancybox.play();
+		$.fancybox.next()
+		playMode = 'playing';
+		$('#playPauseMobile').html('<a onclick="toggleSlideshow()" id="playShow"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/Pause.png"></a>');
+	}
+	
+}
 
 
 $(document).ready(function(){
@@ -728,7 +850,7 @@ function photoshow(){
 	endif; ?>
 
 <?php if (have_rows('partner_group')): ?>
-	<div class="row partner-block green-back text-center">
+	<div class="row partner-block text-center">
 		<?php if( get_field('partners_heading') ): ?>
 			<h2><?php the_field('partners_heading')?></h2>
 		<?php endif; ?>
@@ -801,12 +923,12 @@ function photoshow(){
 
 <script>
 function initIMG(){
-	$('.event-img-full').featherlightGallery({
-	    previousIcon: '<img src="<?php echo get_template_directory_uri(); ?>/img/slider/left-arrow.png">',
-	    nextIcon: '<img src="<?php echo get_template_directory_uri(); ?>/img/slider/right-arrow.png">',
-	    galleryFadeIn: 300,
-	    openSpeed: 300,
-	    closeIcon:'<img src="<?php echo get_template_directory_uri(); ?>/img/icons/gx-icon.png">',
+	// $('.event-img-full').featherlightGallery({
+	//     previousIcon: '<img src="<?php echo get_template_directory_uri(); ?>/img/slider/left-arrow.png">',
+	//     nextIcon: '<img src="<?php echo get_template_directory_uri(); ?>/img/slider/right-arrow.png">',
+	//     galleryFadeIn: 300,
+	//     openSpeed: 300,
+	//     closeIcon:'<img src="<?php echo get_template_directory_uri(); ?>/img/icons/gx-icon.png">',
 	    // beforeOpen: function(event){
 	    // 	thumb = event.target;
 	    // 	full = $(thumb).attr('data-featherlight');
@@ -814,9 +936,9 @@ function initIMG(){
 	    // 	src = $(full).attr('data-src');
 	    // 	$(full).attr('src', src);
 	    // },
-	});
-	total = $('.event-img-thumb').length;
-	$('.total-pics').html(total);
+	// });
+	// total = $('.event-img-thumb').length;
+	// $('.total-pics').html(total);
 }
 
 

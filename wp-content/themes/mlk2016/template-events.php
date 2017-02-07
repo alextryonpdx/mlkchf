@@ -33,33 +33,33 @@
 			?>
 
 			<div class="slide">
-				<?php if($link) {?>
-					<a href="<?php echo $link; ?>">
-				<?php } ?>
-				<img class="non-mobile" src="<?php echo $image; ?>">
-				<img class="mobile-only" src="<?php echo $mobile; ?>">
-				<div class="banner-text non-mobile-<?php echo $class; ?> mobile-<?php echo $classMobile; ?>">
-					<!-- <a class="non-mobile" href="<?php echo $link; ?>"> -->
-						<?php 
-						if( $text ){
-							echo '<h3>' . $text . '</h3>';
-						} elseif( $foreground_image ){ ?>
-							<img src="<?php echo $foreground_image?>">
-						<?php } ?>
-					<!-- </a> -->
-					<!-- <a class="mobile-only" href="<?php echo $link; ?>"> -->
-						<?php 
-						if( $textMobile ){
-							echo '<h3 style="padding:0 5%;">' . $textMobile . '</h3>';
-						} if( $foreground_image_mobile ){ ?>
-							<img src="<?php echo $foreground_image_mobile; ?>">
-						<?php } ?>
-					<!-- </a> -->
+					<?php if($link) {?>
+						<a href="<?php echo $link; ?>">
+					<?php } ?>
+					<img class="non-mobile" src="<?php echo $image; ?>">
+					<img class="mobile-only" src="<?php echo $mobile; ?>">
+					<div class="banner-text non-mobile-<?php echo $class; ?> mobile-<?php echo $classMobile; ?>">
+						<div class="non-mobile">
+							<?php 
+							if( $text ){
+								echo  $text ;
+							} elseif( $foreground_image ){ ?>
+								<img src="<?php echo $foreground_image?>">
+							<?php } ?>
+						</div>
+						<div class="mobile-only">
+							<?php 
+							if( $textMobile ){
+								echo '<h3 style="padding:0 5%;">' . $textMobile . '</h3>';
+							} if( $foreground_image_mobile ){ ?>
+								<img src="<?php echo $foreground_image_mobile; ?>">
+							<?php } ?>
+						</div>
+					</div>
+					<?php if($link !== '') {?>
+						</a>
+					<?php } ?>
 				</div>
-				<?php if($link !== '') {?>
-					</a>
-				<?php } ?>
-			</div>
 		<?php endwhile; ?>
 	</div>
 <?php endif; ?>
@@ -368,12 +368,24 @@
 							if( $link ){ ?>
 								<a href="<?php echo $link ?>"><h3><?php echo $title ?></h3></a>
 							<?php } else {?>
+							<?php 
+							if( get_sub_field('override') ){ ?>
+								<h3 onclick="showVideoEmbed(<?php echo $videoCount; ?>)"><?php echo $title ?></h3>
+							<?php } else { ?>
 								<h3 onclick="showVideo(<?php echo $videoCount; ?>)"><?php echo $title ?></h3>
+							<?php } ?>
+								
 
 							<?php };
 
 							if( $copy ){ ?>
-								<p onclick="showVideo(<?php echo $videoCount; ?>)"><?php echo $copy; ?></p>
+								<?php 
+								if( get_sub_field('override') ){ ?>
+									<p onclick="showVideoEmbed(<?php echo $videoCount; ?>)"><?php echo $copy; ?></p>
+								<?php } else { ?>
+									<p onclick="showVideo(<?php echo $videoCount; ?>)"><?php echo $copy; ?></p>
+								<?php } ?>
+								
 							<?php } ?>
 
 							<!-- <a href="<?php echo $link; ?>"class="read-more">View More <span class="carrot">&raquo;</span></a> -->

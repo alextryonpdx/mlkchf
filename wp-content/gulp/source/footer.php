@@ -168,7 +168,13 @@ function initHack(){
 
 	
 }
-
+function cutSlides(){
+	$('.article-slide').each( function(){
+		if( $(this).contents().length < 8) {
+			$(this).remove();
+		}
+	});
+}
 cutSlides();
 </script>
 

@@ -34,9 +34,19 @@
 			// The Loop
 			while ( $home->have_posts() ) : $home->the_post(); ?>
 
-<?php	if (have_rows('slides') ): ?>
+<?php	if (have_rows('slides') ): 
+	$slides = get_field('slides');
+	// var_dump($slides);
+	$slideCount = intval(count( $slides ));
+	// echo '<br><br>count: ' . $slideCount . '<br><br>';
+	$index = rand(0, ($slideCount-1));
+	// var_dump($index);
+	$banner = $slides[$index];
+	// var_dump( $photos );
+	// var_dump($banner);
+?>
 	<div id="home-slider">
-		<?php while (have_rows('slides')): the_row();
+		<?php // while (have_rows('slides')): the_row();
 			$image = '';
 			$text = '';
 			$textMobile = '';
@@ -45,17 +55,17 @@
 			$mobile = '';
 			$class = '';
 
-			$image = get_sub_field('image');
-			$mobile = get_sub_field('mobile_image');
-			$foreground_image = get_sub_field('foreground_image');
-			$foreground_image_mobile = get_sub_field('foreground_image_mobile');
-			$text = get_sub_field('text');
-			$textMobile = get_sub_field('text_mobile');
-			$link = get_sub_field('link-to');
-			$class = get_sub_field('position');
-			$classMobile = get_sub_field('text_position_mobile');
-			$arrowClass = get_sub_field('arrow_position');
-			$arrowClassMobile = get_sub_field('arrow_position_mobile');
+			$image = $banner['image'];
+			$mobile = $banner['mobile_image'];
+			$foreground_image = $banner['foreground_image'];
+			$foreground_image_mobile = $banner['foreground_image_mobile'];
+			$text = $banner['text'];
+			$textMobile = $banner['text_mobile'];
+			$link = $banner['link-to'];
+			$class = $banner['position'];
+			$classMobile = $banner['text_position_mobile'];
+			$arrowClass = $banner['arrow_position'];
+			$arrowClassMobile = $banner['arrow_position_mobile'];
 			// $anchor = get_sub_field('image_anchor');
 			// $mobile_anchor = get_sub_field('image_anchor_mobile');
 			?>
@@ -70,7 +80,7 @@
 						<div class="non-mobile">
 							<?php 
 							if( $text ){
-								echo '<h3>' . $text . '</h3>';
+								echo  $text ;
 							} elseif( $foreground_image ){ ?>
 								<img src="<?php echo $foreground_image?>">
 							<?php } ?>
@@ -88,10 +98,128 @@
 						</a>
 					<?php } ?>
 				</div>
-		<?php endwhile; ?>
+		<?php // endwhile; ?>
 	</div>
 <?php endif; ?>
 
+
+<div id="home-trio">
+	<img src="<?php the_field('three_up_header_image') ?>">
+	<div class="trio-block">
+		<div id="access" class="trio-slice">
+			<h1>ACCESS</h1>
+			<p><?php the_field('access_body') ?></p>
+		</div>
+		<div id="equity" class="trio-slice">
+			<h1>EQUITY</h1>
+			<p><?php the_field('equity_body') ?></p>
+		</div>
+		<div id="life" class="trio-slice">
+			<h1>LIFE</h1>
+			<p><?php the_field('life_body') ?></p>
+		</div>
+	</div>
+</div>
+
+<style>
+#home-trio {
+    text-align: center;
+    display: block;
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    position: relative;
+}
+#home-trio>img {
+    width: 70%;
+}
+.trio-block {
+    width: 100%;
+    display: inline-block;
+    clear: both;
+    padding-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1240px;
+    padding: 0 10% 80px;
+}
+.trio-slice {
+    width: 33.333%;
+    float: left;
+    text-align: center;
+}
+.trio-slice h1 {
+    /*font-weight: bold;*/
+    letter-spacing: -2px;
+    margin-bottom: 0;
+    font-size: 56px;
+}
+#access h1 {
+    color: #f47a36;
+}
+#equity h1 {
+    color: #10afc9;
+}
+#life h1 {
+    color: #7fb241;
+}
+.trio-slice p {
+    padding: 0 11%;
+    display: inline-block;
+    width: 100%;
+    max-width: 330px;
+    font-size: 18px;
+    /*font-weight: bold;*/
+    margin-top: 5px;
+    line-height: 1.5em;
+}
+
+#photo-grid img {
+    width: 50%;
+    float: left;
+    display: inline-block;
+    margin: 0 0;
+    padding: 0 0;
+}
+#photo-grid {
+    width: 100%;
+    display: block;
+    float: left;
+}
+@media screen and (max-width: 768px){
+	#home-trio>img {
+	    width: 90%;
+	}
+	.trio-slice {
+	    width: 100%;
+	}
+	.trio-block {
+		padding-bottom: 40px;
+	}
+	#photo-grid img {
+		width: 100%;
+	}
+}
+</style>
+<?php 
+$pairs = get_field('grid_photo_pairs');
+// var_dump($pairs);
+// $count = intval(count( $pairs ));
+// echo 'count: ' . $count;
+// $index = rand(0, ($count-1));
+// var_dump($index);
+$photos = $pairs[$index];
+// var_dump( $photos );
+?>
+<div id="photo-grid">
+	<img src="<?php echo $photos['photo_a'] ?>">
+	<img class="non-mobile" src="<?php echo $photos['photo_b'] ?>">
+	<img class="mobile-only" src="<?php echo $photos['photo_b_mobile'] ?>">
+</div>	
+
+
+
+<!-- 
 	<?php $head_bg = get_field('background_image', 18); ?>
 
 	<div id="mission" style="background-image:url('<? echo $head_bg; ?>')">
@@ -104,8 +232,8 @@
 
 			<!-- <a href="http://eepurl.com/NWoNj" target="_blank" id="mission-updated" class="stay-updated">Stay Updated</a> -->
 
-	</div>
-
+	<!-- </div> -->
+ 
 
 
 		<!-- if upcoming event -->
@@ -413,10 +541,10 @@ endif;
 										echo the_sub_field('video_embed');
 									} else { ?>
 									<iframe width="560" height="315" 
-									src="<?php echo $vid ?>?enablejsapi=1&version=3&playerapiid=ytplayer&showinfo=0&rel=0" 
+									src="<?php the_sub_field('video_code'); ?>?enablejsapi=1&version=3&playerapiid=ytplayer&showinfo=0&rel=0" 
 									frameborder="0" allowfullscreen></iframe>
 									<!-- <h3><?php echo get_sub_field('title'); ?></h3> -->
-							<?php } ?>
+									<?php } ?>
 								</div>
 								<?php 
 								if( get_sub_field('override') ){ ?>

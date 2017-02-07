@@ -461,7 +461,8 @@ $(document).ready(function(){
 	 if($('#home-slider').length > 0 ) {
 		$('#home-slider').slick({
 		  autoplay: true,
-		  autoplaySpeed: 3000,
+		  autoplaySpeed: 4000,
+		  speed: 600,
 		  arrows: false,
 		  variableWidth: false,
 		  centerPadding: '0',
@@ -680,7 +681,7 @@ $(window).load(function(){
 	$('.recent-news-tall p').each(function(){
 		excerpts( $(this) );
 	});
-
+	goHash();
 	// make sure active page (sub-nav) is bold
 	$('li a').each(function(){
 	    if($(this).attr('href') == $(location).attr('href')){
@@ -766,10 +767,3 @@ function hideDonors(){
 	});
 }
 
-function cutSlides(){
-	$('.article-slide').each( function(){
-		if( $(this).contents().length < 8) {
-			$(this).remove();
-		}
-	});
-}

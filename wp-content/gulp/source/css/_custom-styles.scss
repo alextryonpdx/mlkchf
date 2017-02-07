@@ -2222,13 +2222,13 @@ input[type="submit"].search-submit {
   position: absolute;
 }
 
-.banner-text h3 {
-  text-align: center;
-  color: #ffffff;
-  font-size: 28px;
-  line-height: 1.75em;
-  text-shadow: 0px 0px 20px black;
-}
+// .banner-text h3 {
+//   text-align: center;
+//   color: #ffffff;
+//   font-size: 28px;
+//   line-height: 1.75em;
+//   text-shadow: 0px 0px 20px black;
+// }
 
 .banner-text.left-mid {
   bottom: 35%;
@@ -2502,7 +2502,12 @@ h4.bold.gallery-head {
 .single-col h3 {
     margin: 1.25em 0 0;
 }
-
+.single-memberbio .single-col h1 {
+  margin-bottom: 0;
+}
+.single-memberbio .single-col h3 {
+  margin-bottom: 10px;
+}
 .single-col:first-child {
   margin-top: 0;
 }
@@ -3368,6 +3373,7 @@ nav input[type="submit"].search-submit {
 #home-slider,
 #home-slider .slide-block  {
   width: 100% !important; 
+  z-index: 9;
   /*height: calc(100vh - 90px);*/
   /*height: calc(75vh - 90px);*/
 }
@@ -3393,6 +3399,98 @@ ul#home-slider,
     bottom: 0;
     position: absolute;
     display: inline-flex;
+    color: #ffffff;
+}
+
+.banner-text h1 {
+  color: #fff;
+  font-size: 86px;
+  letter-spacing: -2px;
+  margin: 0;
+  line-height: 1.125em;
+  text-shadow: 0 0 15px rgba(0,0,0,0.33);
+}
+.banner-text h2 {
+  color: #fff;
+  font-size: 72px;
+  letter-spacing: -2px;
+  margin: 0;
+  line-height: 1.125em;
+  text-shadow: 0 0 15px rgba(0,0,0,0.33);
+}
+.banner-text h3 {
+  color: #fff;
+  font-size: 60px;
+  letter-spacing: -2px;
+  margin: 0;
+  line-height: 1.125em;
+  text-shadow: 0 0 15px rgba(0,0,0,0.33);
+}
+.banner-text h4 {
+  color: #fff;
+  font-size: 48px;
+  margin: 0;
+  line-height: 1.125em;
+  text-shadow: 0 0 15px rgba(0,0,0,0.33);
+}
+.banner-text h5 {
+  color: #fff;
+  font-size: 32px;
+  margin: 0;
+  line-height: 1.25em;
+  font-weight: normal;
+  text-shadow: 0 0 15px rgba(0,0,0,0.33);
+}
+.banner-text p {
+  font-size: 36px;
+  color: #fff;
+  font-family: "Frutiger LT W01 65 Bold";
+  margin: 0;
+  line-height: 1.125em;
+  text-shadow: 0 0 15px rgba(0,0,0,0.33);
+}
+@media screen and (max-width:960px){
+  .banner-text h1 {
+    font-size: 56px;
+  }
+  .banner-text h2 {
+    font-size: 48px;
+  }
+  .banner-text h3 {
+    font-size: 34px;
+  }
+  .banner-text h4 {
+    font-size: 28px;
+  }
+  .banner-text h5 {
+    font-size: 23px;
+  }
+  .banner-text p {
+    font-size: 23px;
+  }
+}
+@media screen and (max-width: 760px){
+  .banner-text h1 {
+    font-size: 56px;
+  }
+  .banner-text h2 {
+    font-size: 48px;
+  }
+  .banner-text h3 {
+    font-size: 34px;
+  }
+  .banner-text h4 {
+    font-size: 30px;
+  }
+  .banner-text h5 {
+    font-size: 23px;
+  }
+  .banner-text p {
+    font-size: 23px;
+  }
+}
+.banner-text p:first-of-type {
+    margin-top: 10px;
 }
 
 .banner-text a:hover, 
@@ -3402,35 +3500,43 @@ ul#home-slider,
 
 /* banner text size/positions */
 .banner-text .non-mobile {
-    max-width: 60%;
+    max-width: 90%;
 }
 .banner-text .mobile-only {
-    max-width: 80%;
+    max-width: 90%;
 }
 
 .non-mobile-left-mid {
     justify-content: flex-start;
     align-items: center;
+    margin-left: 5%;
 }
 .non-mobile-left-low {
     justify-content: flex-start;
     align-items: flex-end;
+    margin-left: 5%;
+    margin-bottom: 20px;
 }
 .non-mobile-left-high {
     justify-content: flex-start;
     align-items: flex-start;
+    margin-left: 5%;
 }
 .non-mobile-right-mid {
     justify-content: flex-end;
     align-items: center;
+    margin-right: 5%;
 }
 .non-mobile-right-low {
     justify-content: flex-end;
     align-items: flex-end;
+    margin-right: 5%;
+    margin-bottom: 20px;
 }
 .non-mobile-right-high {
     justify-content: flex-end;
     align-items: flex-start;
+    margin-right: 5%;
 }
 .non-mobile-center-high {
     justify-content:center;
@@ -3443,32 +3549,39 @@ ul#home-slider,
 .non-mobile-center-low {
     justify-content:center;
     align-items: flex-end;
+    margin-bottom: 20px;
 }
 
 @media screen and (max-width: 760px){
   .mobile-left-mid{
     justify-content: flex-start;
     align-items: center;
+    margin-right: 5%;
   }
   .mobile-left-low{
       justify-content: flex-start;
       align-items: flex-end;
+      margin-right: 5%;
   }
   .mobile-left-high{
       justify-content: flex-start;
       align-items: flex-start;
+      margin-right: 5%;
   }
   .mobile-right-mid{
       justify-content: flex-end;
       align-items: center;
+      margin-right: 5%;
   }
   .mobile-right-low{
       justify-content: flex-end;
       align-items: flex-end;
+      margin-right: 5%;
   }
   .mobile-right-high{
       justify-content: flex-end;
       align-items: flex-start;
+      margin-right: 5%;
   }
   .mobile-center-high{
       justify-content:center;
@@ -3722,7 +3835,7 @@ body {
 .video-overlay iframe {
   height: 39.35vw;
   width: 70vw;
-  top: 150px;
+  top: 135px;
   float: left;
   margin-left: -35vw;
   left: 50%;
@@ -3794,11 +3907,11 @@ body {
   }
   #masterplan-overlay iframe,
   .video-overlay iframe {
-    top: 225px;
+    top: 135px;
   }
   #masterplan-overlay a.vidcloseIcon,
   .video-overlay a.vidcloseIcon {
-    top: 225px;
+    top: 135px;
   }
   .video-overlay h3 {
     position: absolute;
@@ -4353,10 +4466,16 @@ li.unslider-active {
   .masterplan {
     margin-top: 0;
   }
+  h1 {
+    line-height: 1.125em;
+  }
   h3 {
     font-size: 28px;
     font-weight: 300;
     line-height: 32px;
+  }
+  .event h3 {
+    height: auto;
   }
   .sorted-news h3 {
     line-height: 1.4em;
@@ -4428,11 +4547,11 @@ li.unslider-active {
   }
   #masterplan-overlay iframe,
   .video-overlay iframe {
-    top: 220px
+    top: 140px
   }
   #masterplan-overlay a.vidcloseIcon,
   .video-overlay a.vidcloseIcon {
-    top: 220px;
+    top: 140px;
     right: 15vw;
   }
   .video-overlay h3 {
@@ -4943,9 +5062,9 @@ li.unslider-active {
         -ms-flex-align: center;
             align-items: center;
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: flex-start;
+            justify-content: flex-start;
   }
 }
 @media screen and (max-width: 760px){
