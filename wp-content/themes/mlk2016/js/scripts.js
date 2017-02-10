@@ -270,7 +270,7 @@ function sizeVidTitles(){
 
 // NEWS SIZING
 function sizeNews(){
-	if( $(window).width() <= 680 ){
+	if( $(window).width() <= 760 ){
 		$('.news-thumbnail').height('auto');
 		$('.news-title').height('auto');
 		$('.news-excerpt-block').height('auto');

@@ -245,7 +245,7 @@ endwhile;
 			</div>
 
 
-			<h4 class="bold"><?php the_field('grants_heading', 22); ?></h4>
+			<h4 class="bold" style="width:100%;"><?php the_field('grants_heading', 22); ?></h4>
 			<?php $grants = new WP_Query( array(
 										// 'category_name'=>'news',
 										'posts_per_page'=>2,
@@ -265,7 +265,7 @@ endwhile;
 
 
 
-			<h4 class="bold"><?php the_field('newsletters_heading', 22); ?></h4>
+			<h4 class="bold" style="width:100%;"><?php the_field('newsletters_heading', 22); ?></h4>
 
 			<?php $newsletters = get_field('newsletter' , 1346);
 			if($newsletters): 
@@ -309,7 +309,7 @@ endwhile;
 
 
 			if($past){ ?>
-			<h4 class="bold"><?php the_field('videos_heading', 22); ?></h4>
+			<h4 class="bold" style="width:100%;"><?php the_field('videos_heading', 22); ?></h4>
 			<?php
 				$videoCount = 0;
 				foreach( $past as $p ): 

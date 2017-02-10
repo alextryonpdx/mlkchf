@@ -89,7 +89,7 @@
 
 					<div class="row">
 
-						<div class="left-half">
+						<div class="">
 							<!-- php the title -->
 							<h5><?php echo get_field('top_row_small_heading'); ?></h5>
 
@@ -102,18 +102,16 @@
 
 						</div>
 
-						<div class="right-half infographic-container">
+						<!-- <div class="infographic-container">
 							<img class="infographic" id="ladies" src="<?php echo get_field('half-wide_image'); ?>">
-						</div>
+						</div> -->
 
 					</div>
-
-					<div class="row infographic-container">
-						<img class="infographic large" src="<?php the_field('top_row_image'); ?>">
-					</div>
-
 				</div>
-						
+
+				<div class="row infographic-container">
+					<img class="infographic large" src="<?php the_field('top_row_image'); ?>">
+				</div>
 
 				<div class="content-block" id="urgent-need">
 
@@ -216,10 +214,10 @@
 
 				</div>
 
-				<?php if (have_rows('photos')):
-				$count = 0; ?>
+				<!-- <?php // if (have_rows('photos')): 
+				//$count = 0; ?>
 
-				<div class="album green-back">
+				<!-- <div class="album green-back">
 
 	 				<a id="pic-prev-arrow" class=""><img src="<?php echo get_template_directory_uri(); ?>/img/slider/left-arrow-initiative.png"></a>
 					<a id="pic-next-arrow" class=""><img src="<?php echo get_template_directory_uri(); ?>/img/slider/right-arrow-initiative.png"></a>
@@ -233,18 +231,18 @@
 							<div id="img-thumb-gallery" data-featherlight-gallery data-featherlight-filter=".event-img-thumb">
 			 		     		<div class="page" style="display:block; float:left">
 			 						<!-- build photo album w/pagination -->
-			 						<?php while (have_rows('photos')): the_row(); 
-			 							$count++;
-			 							$image = get_sub_field('photo');
+			 						<!-- <?php //while (have_rows('photos')): the_row();  
+			 							//$count++;
+			 							//$image = get_sub_field('photo');
 			 							
 			 						// if counter%12 == 0, close the '.page' div and open a new one!!!!!!!!!!!
-			 						if( ($count-1)%12 == 0 && $count !== 1 ) {
+			 						//if( ($count-1)%12 == 0 && $count !== 1 ) {
 
-			 							echo '</div><div class="page">';
-			 							echo'<script>console.log("cut")</script>';
-			 						};?>
+			 							//echo '</div><div class="page">';
+			 							//echo'<script>console.log("cut")</script>';
+			 						//};?>
 				 						<!-- make img thumbnails w/ open slide-show onclick -->
-				 						<div class="event-img-thumb" data-featherlight="#full<?php echo $count; ?>" id="thumb<?php echo $count; ?>">
+				 						<!--<div class="event-img-thumb" data-featherlight="#full<?php echo $count; ?>" id="thumb<?php echo $count; ?>">
 				 							<img class="thumb" src="<?php echo $image['sizes']['medium']?>">			
 				 						</div>
 
@@ -256,7 +254,7 @@
 				 								
 				 							</div>
 				 						</div>
-									<?php  endwhile;?>
+									<?php  //endwhile;?>
 								</div>
 							</div>
 							
@@ -264,9 +262,9 @@
 						
 					</div>
 
-				</div>
+				</div> -->
 
-				<?php endif; ?>
+				<?php //endif; ?>
 				<!-- end photo album -->
 
 			</section>
@@ -378,9 +376,33 @@
 				<!-- end our team (spotlights) -->
 
 				<?php endwhile; ?>
+</div>
+
+
+<?php
+$pairs = get_field('grid_photo_pairs', 14);
+if( count( $pairs ) > 0 ){
+$slideCount = intval(count( $pairs ));
+$index = rand(0, ($slideCount-1));
+$photos = $pairs[$index];
+?>
+
+<div class="clear" style="height:80px;"></div>
+
+<!-- <div id="photo-grid">
+	<img src="<?php echo $photos['photo_a'] ?>">
+	<img class="non-mobile" src="<?php echo $photos['photo_b'] ?>">
+	<img class="mobile-only" src="<?php echo $photos['photo_b_mobile'] ?>">
+</div> -->	
+
+<div id="photo-grid">
+	<img src="<?php echo $photos['photo_a'] ?>">
+	<img src="<?php echo $photos['photo_b'] ?>">
+</div>
+<?php } ?>
 
 				<div class="clear"></div>
-
+<div class="centered">
 				<div id="team-grid">
 
 					<!-- TEAM MEMBERS -->
@@ -781,6 +803,7 @@
 								
 								</div>
 
+								</div>
 								<?php $counter++;
 
 								}	
@@ -921,12 +944,12 @@
 		<!-- /section -->
 	
 		<script>
-		$(window).on('load', function() { 
-			sizeBlocks(); 
-		});
-		$(window).on('resize', function() {
-			sizeBlocks();
-		});
+		// $(window).on('load', function() { 
+		// 	sizeBlocks(); 
+		// });
+		// $(window).on('resize', function() {
+		// 	sizeBlocks();
+		// });
 		</script>
 
 

@@ -211,12 +211,15 @@ $pairs = get_field('grid_photo_pairs');
 $photos = $pairs[$index];
 // var_dump( $photos );
 ?>
-<div id="photo-grid">
+<!-- <div id="photo-grid">
 	<img src="<?php echo $photos['photo_a'] ?>">
 	<img class="non-mobile" src="<?php echo $photos['photo_b'] ?>">
 	<img class="mobile-only" src="<?php echo $photos['photo_b_mobile'] ?>">
-</div>	
-
+</div> -->	
+<div id="photo-grid">
+	<img src="<?php echo $photos['photo_a'] ?>">
+	<img src="<?php echo $photos['photo_b'] ?>">
+</div>
 
 
 <!-- 
@@ -496,7 +499,7 @@ endif;
 					wp_reset_postdata();
 					endif;?>
 
-					<a class="read-more" href="<?php echo get_category_link(13); ?>">All Hospital News <span class="carrot">&raquo;</span></a>
+					<a class="read-more" href="<?php echo get_permalink(3642); ?>">All Hospital News <span class="carrot">&raquo;</span></a>
 
 
 			<hr class="mobile-only" style="margin: 40px 0 20px;">

@@ -10,9 +10,19 @@ while ( $partners->have_posts() ) : $partners->the_post();
 <div id="content">
 
 
-<?php	if (have_rows('slides') ): ?>
+<?php	if (have_rows('slides') ): 
+	$slides = get_field('slides');
+	// var_dump($slides);
+	$slideCount = intval(count( $slides ));
+	// echo '<br><br>count: ' . $slideCount . '<br><br>';
+	$index = rand(0, ($slideCount-1));
+	// var_dump($index);
+	$banner = $slides[$index];
+	// var_dump( $photos );
+	// var_dump($banner);
+?>
 	<div id="home-slider">
-		<?php while (have_rows('slides')): the_row();
+		<?php // while (have_rows('slides')): the_row();
 			$image = '';
 			$text = '';
 			$textMobile = '';
@@ -21,17 +31,17 @@ while ( $partners->have_posts() ) : $partners->the_post();
 			$mobile = '';
 			$class = '';
 
-			$image = get_sub_field('image');
-			$mobile = get_sub_field('mobile_image');
-			$foreground_image = get_sub_field('foreground_image');
-			$foreground_image_mobile = get_sub_field('foreground_image_mobile');
-			$text = get_sub_field('text');
-			$textMobile = get_sub_field('text_mobile');
-			$link = get_sub_field('link-to');
-			$class = get_sub_field('position');
-			$classMobile = get_sub_field('text_position_mobile');
-			$arrowClass = get_sub_field('arrow_position');
-			$arrowClassMobile = get_sub_field('arrow_position_mobile');
+			$image = $banner['image'];
+			$mobile = $banner['mobile_image'];
+			$foreground_image = $banner['foreground_image'];
+			$foreground_image_mobile = $banner['foreground_image_mobile'];
+			$text = $banner['text'];
+			$textMobile = $banner['text_mobile'];
+			$link = $banner['link-to'];
+			$class = $banner['position'];
+			$classMobile = $banner['text_position_mobile'];
+			$arrowClass = $banner['arrow_position'];
+			$arrowClassMobile = $banner['arrow_position_mobile'];
 			// $anchor = get_sub_field('image_anchor');
 			// $mobile_anchor = get_sub_field('image_anchor_mobile');
 			?>
@@ -64,9 +74,10 @@ while ( $partners->have_posts() ) : $partners->the_post();
 						</a>
 					<?php } ?>
 				</div>
-		<?php endwhile; ?>
+		<?php // endwhile; ?>
 	</div>
 <?php endif; ?>
+
 
 
 	<main role="main">
