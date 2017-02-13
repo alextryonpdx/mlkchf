@@ -459,6 +459,11 @@ $(document).ready(function(){
 
 
 	 if($('#home-slider').length > 0 ) {
+	 	$('#home-slider .slide').css('display', 'none');
+	 	$('#home-slider').on('init', function(slick){
+		  console.log('init');
+		  $('#home-slider .slide').css('display', 'inline-block');
+		});
 		$('#home-slider').slick({
 		  autoplay: true,
 		  autoplaySpeed: 4000,
@@ -469,6 +474,7 @@ $(document).ready(function(){
 		  slidesToShow: 1,
 		  slidesToScroll: 1
 		});
+		
 	 }
 	 // hack workaround to use template directory php
 	 // initHack();

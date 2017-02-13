@@ -1055,6 +1055,10 @@ span.event-date {
   width: 100%;
 }
 
+.event-vid {
+    display: inline-block;
+    margin-bottom: 40px;
+}
 .event-info h4 {
   margin: 0 0;
 }
@@ -2548,7 +2552,7 @@ input[type="submit"].search-submit {
 
 .event-vid h3 {
   color: #97bb60;
-  height: 3em;
+  height: auto;
 }
 
 .mobile-spacer {
@@ -3465,6 +3469,7 @@ nav input[type="submit"].search-submit {
   /*margin-top: 140px;*/
 }
 
+
 #home-slider,
 #home-slider .slide-block  {
   width: 100% !important; 
@@ -3484,7 +3489,7 @@ ul#home-slider,
 #home-slider .slide {
     width: 100%;
     position: relative;
-    display: inline-block;
+    display: none;
 }
 .banner-text {
     width: 100%;
@@ -4439,7 +4444,7 @@ li.unslider-active {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     height: auto;
   }
   .img-sizer img {
