@@ -172,7 +172,7 @@
 										<li><a href="https://secure.mlk-chf.org/year-end-giving-campaign-step-1">Dream Bigger</a></li>
 										<li><a href="http://secure.mlk-chf.org">Give Now</a></li>
 										<li><a href="<?php the_permalink(2252);?>">Employee Giving</a></li>
-										<li><a href="http://secure.mlk-chf.org/happy-birth-day">Happy Birthday Campaign</a></li>
+										<li><a href="http://secure.mlk-chf.org/happy-birth-day">Happy Birthday</a></li>
 									</ul>
 								</li>
 								<li id="give-now-drop"><a href="http://secure.mlk-chf.org">Give Now</a></li>
@@ -232,7 +232,7 @@
 											<li><a href="http://secure.mlk-chf.org">Give Now</a></li>
 											<li><a href="https://secure.mlk-chf.org/year-end-giving-campaign-step-1">Dream Bigger</a></li>
 											<li><a href="<?php the_permalink(2252);?>">Employee Giving</a></li>
-											<li><a href="http://secure.mlk-chf.org/happy-birth-day">Happy Birthday Campaign</a></li>
+											<li><a href="http://secure.mlk-chf.org/happy-birth-day">Happy Birthday</a></li>
 										</ul>
 									</li>
 									<li>
