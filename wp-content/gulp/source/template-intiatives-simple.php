@@ -47,7 +47,7 @@
 }
 </style>
 
-<div id="content" style="margin-bottom:30px;">
+<div id="content" style="margin-bottom:0px;">
 
 	<?php 
 
@@ -119,7 +119,8 @@
 		$initiatives = new WP_Query( array('post_type'=>'initiative',
 											'orderby'=> 'menu_order') );
 		// The Loop
-		while ( $initiatives->have_posts() ) : $initiatives->the_post(); ?>
+		while ( $initiatives->have_posts() ) : $initiatives->the_post(); 
+			$image = get_field('image');?>
 			<div class="initiative-block">
 				<a class="page-anchor"  id="<?php the_field('anchor_name'); ?>"></a>
 				<div class="row">
@@ -133,7 +134,7 @@
 			</div>
 
 			<div class="row infographic-container">
-				<img class="infographic large" src="<?php the_field('image'); ?>">
+				<img class="infographic large" src="<?php echo $image['url']; ?>">
 			</div>
 
 			<?php

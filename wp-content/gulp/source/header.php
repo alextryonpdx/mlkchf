@@ -153,7 +153,7 @@
 										<li><a href="<?php the_permalink(20);?>#Inpatient-Services">Expansion of Services</a></li>
 										<!-- <li><a href="<?php the_permalink(20);?>#healthy-babies">Healthy Babies</a></li> -->
 										<!-- <li><a href="<?php the_permalink(20);?>#learning-center">Learning Center</a></li> -->
-										<li><a href="<?php the_permalink(20);?>#Innovations">Innovations</a></li>
+										<li><a href="<?php the_permalink(20);?>#Innovations">Innovations in Healthcare</a></li>
 										<li><a href="<?php the_permalink(20);?>#Art-Fund">Art Fund</a></li>
 									</ul>
 								</li>
@@ -203,12 +203,12 @@
 								<div class="menu-div"></div>
 								<div class="menu-col">
 								<li><a href="<?php the_permalink(20)?>">Initiatives</a>
-										<ul class="sub-menu">
+										<ul class="sub-menu init-menu">
 											<li><a href="<?php the_permalink(20);?>#Advanced-Care">Advanced Care</a></li>
 											<li><a href="<?php the_permalink(20);?>#Inpatient-Services">Expansion of Services</a></li>
 											<!-- <li><a href="<?php the_permalink(20);?>#healthy-babies">Healthy Babies</a></li> -->
 											<!-- <li><a href="<?php the_permalink(20);?>#learning-center">Learning Center</a></li> -->
-											<li><a href="<?php the_permalink(20);?>#Innovations">Innovations</a></li>
+											<li><a href="<?php the_permalink(20);?>#Innovations">Innovations in Healthcare</a></li>
 											<li><a href="<?php the_permalink(20);?>#Art-Fund">Art Fund</a></li>
 										</ul>
 									</li>
