@@ -1,0 +1,239 @@
+
+.nav #menu-main-nav li a, .nav #menu-main-nav ul.menu li a, .nav #menu-main-nav ul.menu li {
+    padding: 0;
+    margin: 0 ;
+}
+
+/*.nav li, .nav ul.menu li {
+  float: none;
+}*/
+#menu-main-nav li, #menu-main-nav .sub-menu li {
+    margin: 0 15px !important;
+}
+.nav {
+  clear: none;
+}
+
+ul#menu-main-nav {
+      font-size: 15px !important;
+    max-height: 55px !important;
+    /*margin: -2px 0 2px;*/
+}
+
+body {
+  margin-top:-8px;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+#menu-main-nav li#menu-item-38 {
+    width: 71px;
+    max-width: 151px;
+    max-height: 25px;
+    margin-top: -10px !important;
+}
+#menu-main-nav li#menu-item-38 a {
+    margin: -2px 0 2px !important;
+    max-height: 18px;
+    padding: 0;
+}
+ul#menu-main-nav ul.sub-menu {
+    padding-left: 0;
+    margin-top: 3px;
+}
+#menu-main-nav .sub-menu li a {
+    /* font-family: 'FrutigerLTW01-55Roman'; */
+    /* font-weight: bold; */
+    /* color: #FFFFFF; */
+    /* font-size: 14px; */
+    /* letter-spacing: .5px; */
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: none;
+    background-origin: padding-box;
+    background-size: auto;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: auto;
+    display: inline;
+    font-family: 'Frutiger LT W01 65 Bold';
+    font-size: 15px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    height: auto;
+    letter-spacing: normal;
+    line-height: 21px;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    text-align: left;
+    text-decoration: none;
+    text-rendering: optimizeLegibility;
+    width: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.full-header{
+  position: relative;
+  /*width: 100%;*/
+  max-width: 100%;
+}
+
+.full-header nav.nav {
+  margin-top: 36px;
+  /*width: 715px;*/
+}
+
+div#menu-bar {
+    min-width: 0 !important;
+    float: none !important;
+    display: inline-block;
+    margin-top: 0;
+    margin-right: 0;
+}
+
+.footer .address{
+    line-height: 1.5em;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-size: 1.125em;
+}
+
+p {
+  font-size: 15px;
+}
+
+.copyright {
+  color: #ffffff !important;
+  font-size: 15px;
+}
+
+.menu-div {
+  margin: 0 11px;
+}
+
+.menu-col {
+  width: 160px;
+  font-size: 15px;
+}
+nav.big-nav{
+  padding-top: 10px;
+}
+ul.big-nav {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+}
+.big-nav .sub-menu li {
+    margin: 10px 0 0px;
+    float: left;
+    clear: both;
+}
+
+@media screen and (max-width: 1180px) {
+  #menu-main-nav.menu li {
+    display: inline-block;
+    margin: 0 6px !important;
+  }
+  #menu-main-nav .sub-menu li {
+    margin: 0 15px !important;
+  }
+  .full-header {
+    padding: 0 2% !important;
+    width: 96% !important;
+  }
+}
+@media screen and (max-width: 1030px) {
+  ul#menu-main-nav {
+    display: none;
+  }
+}
+
+
+.mobile-nav li {
+    /* font-weight: bold; */
+    /* font-family: 'Frutiger LT W01 65 Bold'; */
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: none;
+    background-origin: padding-box;
+    background-size: auto;
+    box-sizing: border-box;
+    color: rgb(68, 68, 68);
+    cursor: auto;
+    display: inline;
+    font-family: 'Frutiger LT W01 65 Bold';
+    font-size: 15px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    height: auto;
+    line-height: 21px;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    text-align: center;
+    text-decoration: none;
+    text-rendering: optimizeLegibility;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+#give-now-drop {
+    left: 0 !important;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    display: list-item;
+    float: right;
+    font-family: 'Frutiger LT W01 65 Bold';
+    font-size: 15px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    height: 40px;
+    line-height: 21px;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0px;
+    margin-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    position: relative;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+    transition-delay: 0s;
+    transition-duration: 0.2s;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+    white-space: nowrap;
+    width: 150px;
+    -webkit-font-smoothing: antialiased;
+}
+#give-now-drop a {
+  padding: 0 !important;
+}
+
+
+@media screen and (max-width: 680px) {
+  .footer {
+    height: 500px;
+  }
+}
+
+
+
+

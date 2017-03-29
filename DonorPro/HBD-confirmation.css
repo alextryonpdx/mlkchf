@@ -1,0 +1,224 @@
+/* CONFIRMATION PAGE */
+#columns {
+    margin-top: 0;
+    width: 100%;
+    padding: 120px 0;
+    margin: 0;
+    text-align: center;
+    background-image: url('https://secure.mlk-chf.org/files/confirmation_page1.jpg');
+    background-size: cover;
+    background-position: center 0;
+}
+
+.blocks {
+	width: 60%;
+	margin: 5px auto;
+	/*max-width: 800px;*/
+	padding: 80px 10%;
+	display: inline-block;
+}
+
+#block1 {
+	background-color: rgba(255,255,255,.8);
+}
+p.blue {
+	color:#769CA3;
+}
+
+.next-block {
+    width: 48%;
+    margin: 0 0 0 2%;
+    padding: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 0 #929292;
+    display: inline-block;
+    height: 290px;
+}
+#block2 h3 {
+    text-transform: uppercase;
+    color: #F18830;
+    padding: 0 2em 0 1em;
+}
+#block2 ul {
+    text-align: left;
+    line-height: 2em;
+}
+#block2,
+#block5 {
+    padding:0;
+    width: 80%;
+    /*max-width: 1000px;*/
+}
+#block2 .left {
+	width: 50%;
+	height: 340px;
+	overflow: hidden;
+    background-image: url('http://secure.mlk-chf.org/files/girl.png');
+    /*height: 200px;*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right:-1px;
+}
+/*#block2 .left img {
+	width:100%;
+}*/
+#block2 .right {
+    /*height: 360px;*/
+	width: 40.05%;
+    margin-left: -1px;
+	height: 280px;
+	background-color: rgba(255,255,255,.8);
+	text-align: left;
+	padding: 40px 5% 20px;
+}
+#block3 {
+	background-color: rgba(0,0,0,.8);
+	color: #fff;
+}
+#gift {
+    background-color: #97bb60;
+    padding: 1em 1.5em;
+    color: white;
+    font-family: "FrutigerLTW01-55Roman",Verdana,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    font-size: 1.125em;
+    border-radius: 2em;
+    border: none;
+    margin: 12px 0 36px !important;
+    display: inline-block !important;
+}
+
+
+
+
+
+#block5 .right {
+    width: 50%;
+    min-height: 400px;
+    overflow: hidden;
+    background-image: url('http://secure.mlk-chf.org/files/boy.png');
+    /*height: 200px;*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left:-1px;
+}
+#block4 {
+    background-color: rgba(255,255,255,.8);
+    text-align: center;
+    padding: 0;
+    width: 80%;
+}
+#dbl {
+    background-color: rgba(255,255,255,.6);
+    width: 52%;
+    margin: 4%;
+    padding: 5% 20%;
+    box-shadow: 0 0 10px 0 #929292;
+}
+
+
+#dbl ul {
+    line-height: 2em;
+}
+#DYK {
+    margin-bottom: 20px;
+}
+#block5 .left {
+    width: 40.05%;
+    margin-right: -1px;
+    min-height: 280px;
+    background-color: rgba(255,255,255,.8);
+    text-align: center;
+    padding: 80px 5% 40px;
+    line-height: 2em;
+}.bullet {
+    width: 5px;
+    position: absolute;
+    left: -16px;
+    top: 8px;
+}
+
+.links {
+	display: none;
+}
+#content {
+	margin-bottom: 0;
+    margin-top:60px;
+}
+
+#fonty {
+    font-weight: lighter;
+    font-size: 72px;
+    color: #F18830;
+    font-family: 'FrutigerNextW01-UltraLi';
+    margin: 30px 0;
+    line-height: .85em;
+}
+
+img.card {
+    box-shadow: 0 0 10px 0 #929292;
+}
+
+@media only screen and (max-width: 1000px) {
+    .next-block {
+        width: 90%;
+        margin: 40px auto;
+        height: auto;
+    }
+  /*  #block4 {
+        width: 81%;
+    }*/
+}
+
+@media only screen and (max-width: 799px) {
+	#content {
+	    background-color: transparent;
+	}
+    #page {
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+	#content {
+	    background-color: transparent;
+        margin-top: 0;
+	}
+	.blocks	{
+		padding:40px 5%;
+        width: 80%;
+	}
+	.next-block {
+		padding: 40px 5%;
+	}
+	.left,
+	.right {
+		width: 90% !important;
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+        height: auto !important;
+	}
+    #block2 .left,
+    #block5 .right {
+        height: 340px !important;
+        min-height: 0;
+    }
+    #block2,
+    #block5,
+    #block4 {
+        width: 90% !important;
+    }
+    #dbl {
+        width: 81% !important;
+        padding: 5% 5% !important;
+    }
+}
+
+#messages {
+    display: none;
+}
+#breadcrumb {
+    display:none;
+}
