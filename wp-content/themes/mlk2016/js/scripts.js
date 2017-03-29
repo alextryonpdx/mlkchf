@@ -416,7 +416,7 @@ function sizeNews(){
 $(document).ready(function(){
 
 	if( $('.page.initiatives').length > 0 ){
-		initHack();
+		// initHack();
 		console.log('initiatives');
 	}
 
@@ -430,10 +430,10 @@ $(document).ready(function(){
 	})
 	$('.show-sub.active').find('li a').addClass('scrollme bounce animated');
  	// add scrollme to submenu-items
- 	if($('.page.initiatives').length == 0) {
-		$('.current-menu-item .sub-menu li a').addClass('scrollme bounce animated');
-		// $('.active').next('.sub-menu').find('li a').addClass('scrollme bounce animated');
-	}
+
+	$('.current-menu-item .sub-menu li a').addClass('scrollme bounce animated');
+
+	// }
 
 	// $('.mobile-nav .show-sub').each(function(){
 	// 	if( ! $(this).hasClass('active') ){

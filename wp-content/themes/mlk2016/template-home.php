@@ -328,14 +328,14 @@ endif;
 			// The Loop
 			while ( $initiatives->have_posts() ) : $initiatives->the_post(); 
 			$image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ));
-			$anchor = get_field('anchor');
+			$anchor = get_field('anchor_name');
 			?>
 
 				<div class="init-slide" style="margin:0;">
 					<a href="<?php echo get_permalink(20) . '#' . $anchor ; ?>"><img src="<?php echo $image; ?>"></a>
 					<div class="init-slide-body">
-						<a href="<?php echo get_permalink(20) . '#' . $anchor ; ?>"><h2 class="orange"><?php the_title(); ?></h2></a>
-						<p><?php the_content(); ?>
+						<a href="<?php echo get_permalink(20) . '#' . $anchor ; ?>"><h2 class="orange"><?php the_field('title') ?></h2></a>
+						<p><?php the_field('preview_text') ?>
 						<!-- this will be adjusted on deployment -->
 						<a href="<?php echo get_permalink(20) . '#' . $anchor ; ?>" class="read-more">
 							Learn More <span class="carrot">&raquo;</span>

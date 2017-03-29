@@ -148,13 +148,13 @@
 								</li>
 								<li class="show-sub">Initiatives
 									<ul class="sub-menu">
-										<li><a href="<?php the_permalink(20);?>#content">Spotlights & News</a></li>
-										<li><a href="<?php the_permalink(20);?>##advanced-care-clinic">Advanced Care</a></li>
-										<li><a href="<?php the_permalink(20);?>#inpatient-services">Inpatient Services</a></li>
+										<!-- <li><a href="<?php the_permalink(20);?>#content">Spotlights & News</a></li> -->
+										<li><a href="<?php the_permalink(20);?>#Advanced-Care">Advanced Care</a></li>
+										<li><a href="<?php the_permalink(20);?>#Inpatient-Services">Expansion of Services</a></li>
 										<!-- <li><a href="<?php the_permalink(20);?>#healthy-babies">Healthy Babies</a></li> -->
 										<!-- <li><a href="<?php the_permalink(20);?>#learning-center">Learning Center</a></li> -->
-										<li><a href="<?php the_permalink(20);?>#innovations">Innovations</a></li>
-										<li><a href="<?php the_permalink(20);?>#art-fund">Art Fund</a></li>
+										<li><a href="<?php the_permalink(20);?>#Innovations">Innovations</a></li>
+										<li><a href="<?php the_permalink(20);?>#Art-Fund">Art Fund</a></li>
 									</ul>
 								</li>
 								<li class="show-sub">Partners
@@ -203,14 +203,13 @@
 								<div class="menu-div"></div>
 								<div class="menu-col">
 								<li><a href="<?php the_permalink(20)?>">Initiatives</a>
-										<ul class="sub-menu init-menu">
-											<li><a href="<?php the_permalink(20);?>#spotlights-news">Spotlights & News</a></li>
-											<li><a href="<?php the_permalink(20);?>#advanced-care-clinic">Advanced Care</a></li>
-											<li><a href="<?php the_permalink(20);?>#inpatient-services">Inpatient Services</a></li>
+										<ul class="sub-menu">
+											<li><a href="<?php the_permalink(20);?>#Advanced-Care">Advanced Care</a></li>
+											<li><a href="<?php the_permalink(20);?>#Inpatient-Services">Expansion of Services</a></li>
 											<!-- <li><a href="<?php the_permalink(20);?>#healthy-babies">Healthy Babies</a></li> -->
 											<!-- <li><a href="<?php the_permalink(20);?>#learning-center">Learning Center</a></li> -->
-											<li><a href="<?php the_permalink(20);?>#innovations">Innovations</a></li>
-											<li><a href="<?php the_permalink(20);?>#art-fund">Art Fund</a></li>
+											<li><a href="<?php the_permalink(20);?>#Innovations">Innovations</a></li>
+											<li><a href="<?php the_permalink(20);?>#Art-Fund">Art Fund</a></li>
 										</ul>
 									</li>
 								</div>

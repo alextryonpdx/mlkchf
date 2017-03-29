@@ -373,7 +373,8 @@
 	 						<!-- <div class="event-img-thumb" > -->
  							<a class="fancybox img" 
 	 							href="<?php echo $image['url'] ?>"
-	 							title="<span style='float:left'><span style='font-family:Frutiger LT W01\ 65 Bold;'><?php echo $count; ?>/<?php echo $total?></span> | <?php echo get_the_title(); ?> | <?php echo $caption ?></span><span style='float:right;' id='playPause'></span>"
+	 							data-title="<?php echo get_the_title(); ?>"
+	 							data-caption="<?php echo $caption; ?>"
 	 							data-index="<?php echo $count; ?>"
  								data-fancybox-group="gallery">
  								<img class="event-img-thumb <?php echo $class; ?>" 
@@ -705,9 +706,10 @@ function fancybox(){
 	    	autoCenter: setCenter,
 	    	fitToView: true,
 	    	loop: true,
+	    	title: {type:'inside'},
 	    	helpers: {
 	            overlay: {
-	                locked: true,
+	                locked: false,
 	            }
 	        },
 	    	afterShow: function () {
@@ -753,6 +755,12 @@ function fancybox(){
 		        	$('#fakeboxNavMobile').show();
 		        }
 	        	// $('.fancybox-close').html('X');
+
+	        	// construct title from img data
+        		this.title = "<span style='float:left'><span style='font-family:Frutiger LT W01\ 65 Bold;'>" +
+    			 $(this.element).attr('data-index') + "/<?php echo $total?></span>" +
+    			" | " + $(this.element).attr('data-title') + " | " + $(this.element).attr('data-caption') + "</span>"+
+    			"<span style='float:right;' id='playPause'></span>";
 	        	
 	        },
 	        afterLoad: function(current, previous) {

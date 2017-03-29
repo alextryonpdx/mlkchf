@@ -40,7 +40,7 @@
 console.log('pagename: <?php echo $pagename ?>');
 function sizeBoxes(){
 	if( '<?php echo $pagename ?>' == 'initiatives' && $(window).width() <= 940 ){
-		$('.news-box-copy').css('height', 'auto');
+		// $('.news-box-copy').css('height', 'auto');
 	} else {
 		var maxHeight = 0;
 		$('.news-box-copy').height('auto');
@@ -83,91 +83,91 @@ function sizeBoxes(){
 
 }
 
-function initHack(){
-	if($('.page.initiatives').length > 0) {
+// function initHack(){
+// 	if($('.page.initiatives').length > 0) {
 
-		function sizeInitRow(){
-			$('.init-row').each(function(){
-				$(this).height( $(this).find('.init-content').outerHeight() ) ;
-			})
-		}
+// 		function sizeInitRow(){
+// 			$('.init-row').each(function(){
+// 				$(this).height( $(this).find('.init-content').outerHeight() ) ;
+// 			})
+// 		}
 	
-		sizeInitRow();
-		$loc = $(location).attr('href').split('#');
-		$loc = '#' + $loc[1];
-		$slide = '.current-menu-item .sub-menu li a[href='+ $loc +']';
-		$slide = $($slide)[0];
-		$slides = $('.current-menu-item .sub-menu li a');
-		$slideTo = $($slides).index($slide);
-		$('#initiatives-page').unslider({'animate:' : $slideTo, nav: false });
-		if($loc != ''){
-			$('.current-menu-item .sub-menu li a').removeClass('active');
-			$('.current-menu-item .sub-menu li a:eq(' + $slideTo + ')').addClass('active');
-		} else{
-			$('.current-menu-item .sub-menu li a:eq(0)').addClass('active');
-		};
-		$gogo = 'a[href$="' + '/initiatives/' + $loc + '"' + ']';
-		$gogo = $($gogo)[0];
-		$gogo = $($slides).index($gogo);
-		$('#initiatives-page').unslider({
-			nav : false,
-			index : $gogo,
-			infinite: true,
-			loop: true,
-			arrows : {
-				prev: '<a class="init-arrow prev"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/arrow_left_white.svg"></a>',
-				next: '<a class="init-arrow next"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/arrow_right_white.svg"></a>'
-			}//,
-			// 'animate:' $gogo
-		});
+// 		sizeInitRow();
+// 		$loc = $(location).attr('href').split('#');
+// 		$loc = '#' + $loc[1];
+// 		$slide = '.current-menu-item .sub-menu li a[href='+ $loc +']';
+// 		$slide = $($slide)[0];
+// 		$slides = $('.current-menu-item .sub-menu li a');
+// 		$slideTo = $($slides).index($slide);
+// 		$('#initiatives-page').unslider({'animate:' : $slideTo, nav: false });
+// 		if($loc != ''){
+// 			$('.current-menu-item .sub-menu li a').removeClass('active');
+// 			$('.current-menu-item .sub-menu li a:eq(' + $slideTo + ')').addClass('active');
+// 		} else{
+// 			$('.current-menu-item .sub-menu li a:eq(0)').addClass('active');
+// 		};
+// 		$gogo = 'a[href$="' + '/initiatives/' + $loc + '"' + ']';
+// 		$gogo = $($gogo)[0];
+// 		$gogo = $($slides).index($gogo);
+// 		$('#initiatives-page').unslider({
+// 			nav : false,
+// 			index : $gogo,
+// 			infinite: true,
+// 			loop: true,
+// 			arrows : {
+// 				prev: '<a class="init-arrow prev"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/arrow_left_white.svg"></a>',
+// 				next: '<a class="init-arrow next"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/arrow_right_white.svg"></a>'
+// 			}//,
+// 			// 'animate:' $gogo
+// 		});
 
 
-		// $('#initiatives-page').unslider({
-		// 	nav : false,
-		// 	index : $gogo,
-		// 	arrows : {
-		// 		prev: '<a class="init-arrow prev"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/arrow_left_white.svg"></a>',
-		// 		next: '<a class="init-arrow next"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/arrow_right_white.svg"></a>'
-		// 	}		
-		// });
+// 		// $('#initiatives-page').unslider({
+// 		// 	nav : false,
+// 		// 	index : $gogo,
+// 		// 	arrows : {
+// 		// 		prev: '<a class="init-arrow prev"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/arrow_left_white.svg"></a>',
+// 		// 		next: '<a class="init-arrow next"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/arrow_right_white.svg"></a>'
+// 		// 	}		
+// 		// });
 
-		// start = $('.current-menu-item .sub-menu li a[href=#'+$loc+']').index( this );
-		// console.log(start);
-		// $('#initiatives-page').unslider('animate:' + start);
+// 		// start = $('.current-menu-item .sub-menu li a[href=#'+$loc+']').index( this );
+// 		// console.log(start);
+// 		// $('#initiatives-page').unslider('animate:' + start);
 
-		$('.current-menu-item .sub-menu li a').each(function( index ){
-			$(this).click( function(){
-				console.log( $(this).attr('href') );
-				slider = $('.current-menu-item .sub-menu li a').index( this );
-				$('#initiatives-page').unslider('animate:' + slider);
-			})
-		})
-		$('.init-menu.sub-menu li a').each(function( index ){
-			$(this).click( function(){
-				console.log( $(this).attr('href') );
-				slider = $('.init-menu.sub-menu li a').index( this );
-				$('#initiatives-page').unslider('animate:' + slider);
-			})
-		})
-		$('#initiative-links a').each(function( index ){
-			$(this).click( function(){
-				console.log( $(this).attr('href') );
-				slider = $('#initiative-links a').index( this );
-				slider ++;
-				$('#initiatives-page').unslider('animate:' + slider);
-			})
-		})
-		$('#initiatives-page').on('unslider.change', function(event, index, slide) {
-			$('.current-menu-item .sub-menu li a').removeClass('active');
-			$('.current-menu-item .sub-menu li a:eq(' + index + ')').addClass('active');
-			$hash = $('.current-menu-item .sub-menu li a:eq(' + index + ')').attr('href');
-			window.history.pushState('move','Title', $hash);
-			sizeInitRow();
-		});
-	 }
+// 		$('.current-menu-item .sub-menu li a').each(function( index ){
+// 			$(this).click( function(){
+// 				console.log( $(this).attr('href') );
+// 				slider = $('.current-menu-item .sub-menu li a').index( this );
+// 				$('#initiatives-page').unslider('animate:' + slider);
+// 			})
+// 		})
+// 		$('.init-menu.sub-menu li a').each(function( index ){
+// 			$(this).click( function(){
+// 				console.log( $(this).attr('href') );
+// 				slider = $('.init-menu.sub-menu li a').index( this );
+// 				$('#initiatives-page').unslider('animate:' + slider);
+// 			})
+// 		})
+// 		$('#initiative-links a').each(function( index ){
+// 			$(this).click( function(){
+// 				console.log( $(this).attr('href') );
+// 				slider = $('#initiative-links a').index( this );
+// 				slider ++;
+// 				$('#initiatives-page').unslider('animate:' + slider);
+// 			})
+// 		})
+// 		$('#initiatives-page').on('unslider.change', function(event, index, slide) {
+// 			$('.current-menu-item .sub-menu li a').removeClass('active');
+// 			$('.current-menu-item .sub-menu li a:eq(' + index + ')').addClass('active');
+// 			$hash = $('.current-menu-item .sub-menu li a:eq(' + index + ')').attr('href');
+// 			window.history.pushState('move','Title', $hash);
+// 			sizeInitRow();
+// 		});
+// 	 }
 
 	
-}
+// }
 function cutSlides(){
 	$('.article-slide').each( function(){
 		if( $(this).contents().length < 8) {

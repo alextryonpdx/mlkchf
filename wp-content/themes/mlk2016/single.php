@@ -20,17 +20,13 @@
 				<!-- section -->
 				<section>
 
-					
-
-				<!-- 	<?php $parent = $post->post_parent;
-						$crumbname = get_the_title($parent);
-						$crumblink = get_the_permalink($parent);
-						echo '<a href=' . $crumblink . '><p>Back to '. $crumbname . '</p></a>'; ?> -->
-					<?php if(function_exists('simple_breadcrumb')) {simple_breadcrumb();} ?>
+					<div class="non-mobile">
+						<?php if(function_exists('simple_breadcrumb')) {simple_breadcrumb();} ?>
+					</div>
 
 					<h1 class="green"><?php the_title(); ?></h1>
 
-					<div class="single-sidebar">
+					<div class="single-sidebar non-mobile">
 						<hr>
 
 								<?php 
@@ -101,7 +97,7 @@ IF subheading, subheading in h3?
 	
 	if( have_rows('spotlights') ):
 		?>
-	<div class="single-col">
+	<div class="single-col related-articles">
 		<?php
 	    while ( have_rows('spotlights') ) : the_row();
 	    $spotlight = '';
@@ -123,6 +119,36 @@ IF subheading, subheading in h3?
 	<?php endwhile; ?>
 	</div>
 	<?php endif;?>
+
+				<div class="mobile-only mobile-article-sidebar">
+						<?php if(function_exists('simple_breadcrumb')) {simple_breadcrumb();} ?>
+					
+
+					<div class="single-sidebar mobile">
+						<hr>
+
+								<?php 
+								$tags = the_tags();
+								if ($tags){ ?>
+									<p class="tag-line"> Tags:
+								<?php foreach($tags as $tag):
+								?>
+								<a class="tag-link" href="<?php echo get_tag_link($tag); ?>"><?php echo $tag->name ?></a>
+								<?php endforeach; ?>
+								</p> <?php } ?>
+						<hr>
+
+						<h4 style="padding-left:0;">Share</h4>
+
+						<a class="single-social" target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo get_the_permalink(); ?>&text=<?php echo urlencode(the_field('tweet_text')) ?>">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/header/twitter.png" alt="Logo">
+					</a>
+						<a class="single-social" target="_blank" href="http://www.facebook.com/sharer.php?u=<?php echo get_the_permalink(); ; ?>">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/header/facebook.png" alt="Logo">
+						</a>
+
+					</div>
+				</div>
 	
 				</section>
 				<!-- /section -->
