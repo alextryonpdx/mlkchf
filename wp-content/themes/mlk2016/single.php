@@ -71,9 +71,40 @@ IF subheading, subheading in h3?
  							$content = '';
  							$subheading = get_sub_field('sub-heading');
  							$content = get_sub_field('content');
+ 							$videoCount = 0;
+
  						?>
 
  						<div class="single-col">
+ 							<?php if(get_sub_field('embed_video') == true ){ ?>
+ 								<div class="player"  onclick="showVideo(<?php echo $videoCount; ?>)">
+									<img class="video-thumb "src="<?php echo the_sub_field('video_thumbnail'); ?>">
+								</div>
+								<div id="<?php echo $videoCount; ?>-overlay" class="video-overlay">
+					 				<?php 
+									if( get_sub_field('override') ){ ?>
+										<a class="vidcloseIcon" onclick="hideVideoEmbed(<?php echo $videoCount; ?>);">X</a>
+									<?php 
+									} else { ?>
+										<a class="vidcloseIcon" onclick="hideVideo(<?php echo $videoCount; ?>);">X</a>
+									<?php } ?>
+							
+									<?php 
+									if(get_sub_field('override')){
+										echo the_sub_field('video_embed');
+									} else { ?>
+									<iframe width="560" height="315" 
+									src="<?php echo the_sub_field('video_embed_code') ?>?enablejsapi=1&version=3&playerapiid=ytplayer&showinfo=0&rel=0" 
+									frameborder="0" allowfullscreen></iframe>
+									<!-- <h3><?php echo get_sub_field('title'); ?></h3> -->
+									<?php } 
+
+									if( $copy ){ ?>
+										<p><?php echo $copy; ?></p>
+									<?php } ?>
+
+						 		</div>
+ 							<?php } ?>
 
  							<?php if ( $subheading !== '' && $subheading !== 'undefined') { 
  								 ?>
@@ -89,8 +120,10 @@ IF subheading, subheading in h3?
 
 						</div>
 
-						<?php endwhile;
-						endif; ?>
+						<?php 
+							$videoCount++;
+						endwhile;
+					endif; ?>
 
 
 						<?php

@@ -1528,7 +1528,8 @@ a#home-content {
 .about-hospital h2 {
   color: #97bb60;
 }
-.about #content {
+.about #content,
+.initiatives #content {
   margin: 180px 0 0px;
 }
 .about .member-bio>img {
@@ -1565,14 +1566,16 @@ a#home-content {
     width: 100%;
   }
 }
-@media screen and (max-width: 980px) {
-  .about #content {
+@media screen and (max-width: 1030px) {
+  .about #content,
+  .initiatives #content {
       margin-top:90px;
   }
 }
 
 @media screen and (max-width: 680px) {
-  .about #content {
+  .about #content,
+  .initiatives #content {
     margin-top: 50px;
   }
   nav.big-nav {
@@ -2609,7 +2612,10 @@ h4.bold.gallery-head {
   width: 75%;
   float: right;
 }
-
+.single-col .player {
+  width: 50%;
+  margin: 5px 25% 20px;
+}
 .single-col h3 {
     margin: 1.25em 0 0;
 }
@@ -4512,6 +4518,10 @@ li.unslider-active {
   .single-col,
   .single-sidebar {
     width: 100%;
+  }
+  .single-col .player {
+    width: 100%;
+    margin: 0 0 20px 0;
   }
   .single-sidebar {
     padding: 0 10px;

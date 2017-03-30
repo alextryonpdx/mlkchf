@@ -70,7 +70,7 @@
 								echo the_sub_field('video_embed');
 							} else { ?>
 							<iframe width="560" height="315" 
-							src="<?php echo $vid ?>?enablejsapi=1&version=3&playerapiid=ytplayer&showinfo=0&rel=0" 
+							src="<?php echo $vid ?>?enablejsapi=1&version=3&playerapiid=ytplayer&showinfo=0&rel=0&playsinline=0" 
 							frameborder="0" allowfullscreen></iframe>
 							<!-- <h3><?php echo get_sub_field('title'); ?></h3> -->
 							<?php } 
